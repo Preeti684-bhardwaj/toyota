@@ -146,7 +146,7 @@ $.ajax({
 function submitanswer(){
 
 	$("#overlay").fadeIn(300);
-	
+	console.log("hii from submit answer")
 	var lakshya_id=localStorage.getItem("lakshya_id");
 	var assessment_id = localStorage.getItem("assessment_id");  
 
@@ -694,7 +694,7 @@ else if(choice_length == "3")
 			          	data: "json",
 			           	success: function(data)
 			           	{ 
-			           		
+			           		console.log(data)
 			           		var status = data.status;
 			           		
 			           		if(status == 'success')
@@ -702,9 +702,7 @@ else if(choice_length == "3")
 			           			
 			           			get_next_qn();
 			           			console.log(status);
-								$("#overlay").fadeIn(300);
-
-			           					           			
+								$("#overlay").fadeIn(300);	           			
 			           			}
 			           		else
 			           			{
