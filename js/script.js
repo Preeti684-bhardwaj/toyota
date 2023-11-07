@@ -689,7 +689,7 @@ else if(choice_length == "3")
 	
 	$.ajax({
 						
-						url:"https://toyota-lakshya-onlineassessment.in/api/submit_answer/?login_id="+lakshya_id+"&assessment_id="+assessment_id+"&question_id="+question_id+"&elapsed_time="+elapsed_time+"&answer="+"jk"+"",
+						url:"https://toyota-lakshya-onlineassessment.in/api/submit_answer/?login_id="+""+"&assessment_id="+assessment_id+"&question_id="+question_id+"&elapsed_time="+elapsed_time+"&answer="+value+"",
 			          	type:"GET",
 			          	data: "json",
 			           	success: function(data)
