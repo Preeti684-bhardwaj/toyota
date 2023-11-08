@@ -686,7 +686,7 @@ else if(choice_length == "3")
 */
 	
 	var question_id = localStorage.getItem("id1");
-	
+	console.log(value)
 	
 	$.ajax({
 						
