@@ -102,6 +102,7 @@ function get_next_qn() {
 }
 
 function submitanswer() {
+	if ('localStorage' in window && window['localStorage'] !== null) {
   $("#overlay").fadeIn(300);
   console.log("hii from submit answer");
   var lakshya_id = localStorage.getItem("lakshya_id");
@@ -735,6 +736,10 @@ function submitanswer() {
       $("#overlay").fadeOut(300);
     }, 300);
   });
+} else {
+	// Handle lack of support
+	console.error('Local storage is not supported in this browser.');
+}
 }
 
 function question1(data) {
