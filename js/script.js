@@ -1,5 +1,9 @@
 var executed = false;
 
+function alertSomething(){
+	alert("hii i am working")
+}
+
 function get_next_qn() {
   $("#overlay").fadeIn(300);
 
