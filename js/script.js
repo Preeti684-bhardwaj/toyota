@@ -720,13 +720,13 @@ function submitanswer() {
     success: function (data) {
       console.log(data);
       var status = data.status;
-
+    
       if (status == "success" && value) {
         get_next_qn();
         console.log(status);
         $("#overlay").fadeIn(300);
       } else {
-        alert("Error");
+        alert("Error",value);
         console.log("error");
       }
     },
