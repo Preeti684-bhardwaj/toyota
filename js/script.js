@@ -716,7 +716,7 @@ function submitanswer() {
       elapsed_time +
       "&answer="+ +"",
     type: "GET",
-    data: "json",
+    dataType: "json",
     success: function (data) {
       console.log(data);
       var status = data.status;
