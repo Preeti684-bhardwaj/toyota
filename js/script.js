@@ -36,9 +36,10 @@ $.ajax({
 		    }
 
 	  		var answered_questions=data.answered_questions;
+			console.log(answered_questions)
            	
            	var answered_questionss=data.answered_questions;
-          
+			   console.log(answered_questionss)
             var total_questions = data.total_questions;
 
            
@@ -689,7 +690,7 @@ else if(choice_length == "3")
 	
 	$.ajax({
 						
-						url:"https://toyota-lakshya-onlineassessment.in/api/submit_answer/?login_id="+lakshya_id+"&assessment_id="+assessment_id+"&question_id="+question_id+"&elapsed_time="+elapsed_time+"&answer="+" "+"",
+						url:"https://toyota-lakshya-onlineassessment.in/api/submit_answer/?login_id="+lakshya_id+"&assessment_id="+assessment_id+"&question_id="+question_id+"&elapsed_time="+elapsed_time+"&answer="+value+"",
 			          	type:"GET",
 			          	data: "json",
 			           	success: function(data)
