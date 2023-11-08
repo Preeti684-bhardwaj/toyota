@@ -665,42 +665,31 @@ else if(choice_length == "3")
 
 	}
 */
-	
-	var question_id = localStorage.getItem("id1");
-	
-	
-	$.ajax({
-						
-						url:"https://toyota-lakshya-onlineassessment.in/api/submit_answer/?login_id="+lakshya_id+"&assessment_id="+assessment_id+"&question_id="+question_id+"&elapsed_time="+elapsed_time+"&answer="+value+"",
-			          	type:"GET",
-			          	dataType: "json",
-			           	success: function(data)
-			           	{ 
-			           		
-			           		var status = data.status;
-			           		console.log(status)
-			           		if(status == 'success')
-			           			{
-			           			
-			           			get_next_qn();
-			           			console.log(status);
-			           			
-			           					           			
-			           			}
-			           		else
-			           			{
-			           		     alert("Error");
-			           			}
-			           }
-					}).done(function()  {
-						setTimeout(function(){
-								$("#overlay").fadeOut(300);
-					
-					
-						},300);
-						
-					});
 
+var question_id = localStorage.getItem("id1");
+
+$.ajax({
+	url: "https://toyota-lakshya-onlineassessment.in/api/submit_answer/?login_id=" + lakshya_id + "&assessment_id=" + assessment_id + "&question_id=" + question_id + "&elapsed_time=" + elapsed_time + "&answer=" + value + "",
+	type: "GET",
+	dataType: "json",
+	success: function (data) {
+		var status = data.status;
+		console.log(status);
+		if (status === 'success') {
+			get_next_qn();
+			console.log(status);
+
+			// Display an alert after successful submission
+			alert("Answer submitted successfully!");
+		} else {
+			alert("Error");
+		}
+	},
+}).done(function () {
+	setTimeout(function () {
+		$("#overlay").fadeOut(300);
+	}, 300);
+});
 	
 }
 
