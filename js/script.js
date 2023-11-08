@@ -133,10 +133,6 @@ function submitanswer() {
       ) {
         value = localStorage["key"];
         alert(value);
-        // Assuming 'value' is the variable you want to display
-        var messageElement = document.createElement("div");
-        messageElement.textContent = "The answer is: " + value;
-        document.body.appendChild(messageElement);
       }
       if (
         localStorage["key"] != ids1 &&
@@ -162,10 +158,6 @@ function submitanswer() {
       ) {
         value = localStorage["key"];
         alert(value);
-        // Assuming 'value' is the variable you want to display
-        var messageElement = document.createElement("div");
-        messageElement.textContent = "The answer is: " + value;
-        document.body.appendChild(messageElement);
       }
       if (
         (localStorage["key"] != ids1 &&
@@ -183,10 +175,6 @@ function submitanswer() {
       if (localStorage["key"] == ids1 || localStorage["key"] == ids2) {
         value = localStorage["key"];
         alert(value);
-        // Assuming 'value' is the variable you want to display
-        var messageElement = document.createElement("div");
-        messageElement.textContent = "The answer is: " + value;
-        document.body.appendChild(messageElement);
       }
       if (localStorage["key"] != ids1 && localStorage["key"] != ids2) {
         value = "";
@@ -726,9 +714,7 @@ function submitanswer() {
       question_id +
       "&elapsed_time=" +
       elapsed_time +
-      "&answer=" +
-      value +
-      "",
+      "&answer="+ +"",
     type: "GET",
     data: "json",
     success: function (data) {
