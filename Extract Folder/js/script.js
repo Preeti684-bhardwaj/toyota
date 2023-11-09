@@ -721,7 +721,7 @@ function submitanswer() {
     success: function(data){
       var status = data.status;
       console.log(status);
-      if (status === "success" && value) {
+      if (status === "success") {
         get_next_qn();
         alert(status);
         // Display an alert after successful submission
