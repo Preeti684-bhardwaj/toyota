@@ -108,8 +108,6 @@ function submitanswer() {
   var elapsed_time = localStorage.getItem("elapsed_time");
 
   var value;
-
-  if ("localStorage" in window && window["localStorage"] !== null) {
     if (question_type == "single_choice") {
       if (choice_length == "4") {
         var ids1 = document.getElementById("myBtn1").value;
@@ -124,7 +122,7 @@ function submitanswer() {
           localStorage["key"] == ids4
         ) {
           value = localStorage["key"];
-          //alert(value);
+          alert(value);
         }
         if (
           localStorage["key"] != ids1 &&
@@ -149,7 +147,7 @@ function submitanswer() {
           localStorage["key"] == ids5
         ) {
           value = localStorage["key"];
-          //alert(value);
+          alert(value);
         }
         if (
           (localStorage["key"] != ids1 &&
@@ -166,7 +164,7 @@ function submitanswer() {
 
         if (localStorage["key"] == ids1 || localStorage["key"] == ids2) {
           value = localStorage["key"];
-          //alert(value);
+          alert(value);
         }
         if (localStorage["key"] != ids1 && localStorage["key"] != ids2) {
           value = "";
@@ -182,6 +180,7 @@ function submitanswer() {
           localStorage["key"] == ids3
         ) {
           value = localStorage["key"];
+          alert(value);
         }
         if (
           localStorage["key"] != ids1 &&
@@ -191,10 +190,6 @@ function submitanswer() {
           value = "";
         }
       }
-    } else {
-      // Handle lack of support for local storage
-      alert("Local storage is not supported on this browser.");
-    }
   } else if (question_type == "descriptive") {
     var value = document.getElementById("descriptionn").value;
   } else if (question_type == "image_descriptive") {
@@ -723,16 +718,16 @@ function submitanswer() {
       "",
     type: "GET",
     data:"json",
-    success: function (data) {
+    success: function(data){
       var status = data.status;
       console.log(status);
-      if (status === "success") {
+      if (status === "success" && value) {
         get_next_qn();
-        console.log(status);
+        alert(status);
         // Display an alert after successful submission
         alert("Answer submitted successfully!");
       } else {
-        alert("Error");
+        alert("can't do it");
       }
     },
   }).done(function () {
@@ -741,41 +736,6 @@ function submitanswer() {
     }, 300);
   });
 }
-
-// function submitanswer() {
-//   console.log("hii from submit answer function");
-//   $("#overlay").fadeIn(300);
-
-//   var lakshya_id = localStorage.getItem("lakshya_id");
-//   var assessment_id = localStorage.getItem("assessment_id");
-//   var elapsed_time = localStorage.getItem("elapsed_time");
-
-//   var value = getAnswerValue(); // Function to get the answer value based on question type
-
-//   if (value !== null) {
-//     $.ajax({
-//       url: `https://toyota-lakshya-onlineassessment.in/api/submit_answer/?login_id=${lakshya_id}&assessment_id=${assessment_id}&question_id=${localStorage.getItem("id1")}&elapsed_time=${elapsed_time}&answer=${value}`,
-//       type: "GET",
-//       dataType: "json",
-//       success: function (data) {
-//         var status = data.status;
-//         console.log(status);
-//         if (status === "success") {
-//           get_next_qn();
-//           console.log(status);
-//           alert("Answer submitted successfully!");
-//         } else {
-//           alert("Error");
-//         }
-//       },
-//     }).always(function () {
-//       $("#overlay").fadeOut(300);
-//     });
-//   } else {
-//     alert("Invalid answer value");
-//     $("#overlay").fadeOut(300); // Close overlay if no answer value
-//   }
-// }
 
 function question1(data) {
   var obj = data.question;
