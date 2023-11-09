@@ -735,300 +735,345 @@ alert(value)
   });
 }
 
+// function question1(data) {
+//   var obj = data.question;
+
+//   if (obj.choice.length == "4") {
+//     var page1 =
+//       '<div class="col-sm-4">' +
+//       '<h2 style="text-align: center;font-family:calibri bold;color:#545454;width: 70%;border-bottom: 2px solid red;" >Assesment</h2>' +
+//       " </div><br>" +
+//       '<div class="col-sm-12">' +
+//       '<h6 style="font-family: calibri regular;color: #444444;font-size:20px;">cate1</h6>' +
+//       "</div><br>" +
+//       '<div class="col-sm-12">' +
+//       '<ul class="list-group" style="list-style-type: none">' +
+//       '<li><input type="radio" name="age" id="myBtn1" value="id1" onclick=" myFunction1()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:#444444;font-family: calibri regular;font-size:16px">answers<li>' +
+//       '<li style="display:none">id1</li>' +
+//       "</ul>" +
+//       "</div>" +
+//       '<div class="col-sm-12">' +
+//       '<ul class="list-group" style="list-style-type: none">' +
+//       '<li><input type="radio" name="age" id="myBtn2" value="id2" onclick=" myFunction2()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:16px;font-family: calibri regular" hspace="20">answers1<li>' +
+//       '<li style="display:none">id2</li>' +
+//       "</ul>" +
+//       "</div>" +
+//       '<div class="col-sm-12">' +
+//       '<ul class="list-group" style="list-style-type: none">' +
+//       '<li><input type="radio" name="age" id="myBtn3" value="id3"onclick=" myFunction3()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:16px;font-family: calibri regular">answers2<li>' +
+//       '<li style="display:none">id3</li>' +
+//       "</ul>" +
+//       "</div>" +
+//       '<div class="col-sm-12">' +
+//       '<ul class="list-group" style="list-style-type: none">' +
+//       '<li><input type="radio" name="age" id="myBtn4" value="id4" onclick=" myFunction4()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b id="data" style="color:444444;font-size:16px;font-family: calibri regular">answers3<li>' +
+//       '<li style="display:none">id4</li>' +
+//       "</ul>" +
+//       "</div>" +
+//       "</div></div>";
+
+//     var collection = "";
+
+//     var i = 0;
+
+//     var ele = "";
+
+//     ele = page1;
+
+//     var cate1 = obj.question;
+//     var image1 = obj.question_type;
+
+//     var qesn = obj.choice[0].choice;
+//     var qesn1 = obj.choice[1].choice;
+//     var qesn2 = obj.choice[2].choice;
+//     var qesn3 = obj.choice[3].choice;
+
+//     var id1 = obj.choice[0].id;
+//     var id2 = obj.choice[1].id;
+//     var id3 = obj.choice[2].id;
+//     var id4 = obj.choice[3].id;
+
+//     ele = ele.replace("Assesment", "Single Choice");
+//     ele = ele.replace("cate1", cate1);
+
+//     ele = ele.replace("answers", qesn);
+//     ele = ele.replace("answers1", qesn1);
+//     ele = ele.replace("answers2", qesn2);
+//     ele = ele.replace("answers3", qesn3);
+
+//     ele = ele.replace("id1", id1);
+//     ele = ele.replace("id2", id2);
+//     ele = ele.replace("id3", id3);
+//     ele = ele.replace("id4", id4);
+
+//     collection = ele;
+
+//     $("#bodypage").html(collection);
+//   } else if (obj.choice.length == "3") {
+//     var page1 =
+//       '<div class="col-sm-4">' +
+//       '<h2 style="text-align: center;font-family:calibri bold;color:#545454;width: 70%;border-bottom: 2px solid red;" >Assesment</h2>' +
+//       " </div><br>" +
+//       '<div class="col-sm-12">' +
+//       '<h6 style="font-family: calibri regular;color: #444444;font-size:20px;">cate1</h6>' +
+//       "</div><br>" +
+//       '<div class="col-sm-12">' +
+//       '<ul class="list-group" style="list-style-type: none">' +
+//       '<li><input type="radio" name="age" id="myBtn1" value="id1" onclick=" myFunction1()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:#444444;font-family: calibri regular;font-size:16px">answers<li>' +
+//       '<li style="display:none">id1</li>' +
+//       "</ul>" +
+//       "</div>" +
+//       '<div class="col-sm-12">' +
+//       '<ul class="list-group" style="list-style-type: none">' +
+//       '<li><input type="radio" name="age" id="myBtn2" value="id2" onclick=" myFunction2()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:16px;font-family: calibri regular" hspace="20">answers1<li>' +
+//       '<li style="display:none">id2</li>' +
+//       "</ul>" +
+//       "</div>" +
+//       '<div class="col-sm-12">' +
+//       '<ul class="list-group" style="list-style-type: none">' +
+//       '<li><input type="radio" name="age" id="myBtn3" value="id3"onclick=" myFunction3()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:16px;font-family: calibri regular">answers2<li>' +
+//       '<li style="display:none">id3</li>' +
+//       "</ul>" +
+//       "</div>" +
+//       "</div></div>";
+
+//     var collection = "";
+
+//     var i = 0;
+
+//     var ele = "";
+
+//     ele = page1;
+
+//     var cate1 = obj.question;
+//     var image1 = obj.question_type;
+
+//     var qesn = obj.choice[0].choice;
+//     var qesn1 = obj.choice[1].choice;
+//     var qesn2 = obj.choice[2].choice;
+
+//     var id1 = obj.choice[0].id;
+//     var id2 = obj.choice[1].id;
+//     var id3 = obj.choice[2].id;
+
+//     ele = ele.replace("Assesment", "Single Choice");
+//     ele = ele.replace("cate1", cate1);
+
+//     ele = ele.replace("answers", qesn);
+//     ele = ele.replace("answers1", qesn1);
+//     ele = ele.replace("answers2", qesn2);
+
+//     ele = ele.replace("id1", id1);
+//     ele = ele.replace("id2", id2);
+//     ele = ele.replace("id3", id3);
+
+//     collection = ele;
+
+//     $("#bodypage").html(collection);
+//   } else if (obj.choice.length == "2") {
+//     var page1 =
+//       '<div class="col-sm-4">' +
+//       '<h2 style="text-align: center;font-family:calibri bold;color:#545454;width: 70%;border-bottom: 2px solid red;" >Assesment</h2>' +
+//       " </div><br>" +
+//       '<div class="col-sm-12">' +
+//       '<h6 style="font-family: calibri regular;color: #444444;font-size:20px;">cate1</h6>' +
+//       "</div><br>" +
+//       '<div class="col-sm-12">' +
+//       '<ul class="list-group" style="list-style-type: none">' +
+//       '<li><input type="radio" name="age" id="myBtn1" value="id1" onclick=" myFunction1()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:#444444;font-family: calibri regular;font-size:16px">answers<li>' +
+//       '<li style="display:none">id1</li>' +
+//       "</ul>" +
+//       "</div>" +
+//       '<div class="col-sm-12">' +
+//       '<ul class="list-group" style="list-style-type: none">' +
+//       '<li><input type="radio" name="age" id="myBtn2" value="id2" onclick=" myFunction2()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:16px;font-family: calibri regular" hspace="20">answers1<li>' +
+//       '<li style="display:none">id2</li>' +
+//       "</ul>" +
+//       "</div>" +
+//       "</div></div>";
+
+//     var collection = "";
+
+//     var i = 0;
+
+//     var ele = "";
+
+//     ele = page1;
+
+//     var cate1 = obj.question;
+//     var image1 = obj.question_type;
+
+//     var qesn = obj.choice[0].choice;
+//     var qesn1 = obj.choice[1].choice;
+
+//     var id1 = obj.choice[0].id;
+//     var id2 = obj.choice[1].id;
+
+//     ele = ele.replace("Assesment", "Single Choice");
+//     ele = ele.replace("cate1", cate1);
+
+//     ele = ele.replace("answers", qesn);
+//     ele = ele.replace("answers1", qesn1);
+
+//     ele = ele.replace("id1", id1);
+//     ele = ele.replace("id2", id2);
+
+//     collection = ele;
+
+//     $("#bodypage").html(collection);
+//   } else if (obj.choice.length == "5") {
+//     var page1 =
+//       '<div class="col-sm-4">' +
+//       '<h2 style="text-align: center;font-family:calibri bold;color:#545454;width: 70%;border-bottom: 2px solid red;" >Assesment</h2>' +
+//       " </div><br>" +
+//       '<div class="col-sm-12">' +
+//       '<h6 style="font-family: calibri regular;color: #444444;font-size:20px;">cate1</h6>' +
+//       "</div><br>" +
+//       '<div class="col-sm-12">' +
+//       '<ul class="list-group" style="list-style-type: none">' +
+//       '<li><input type="radio" name="age" id="myBtn1" value="id1" onclick=" myFunction1()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:#444444;font-family: calibri regular;font-size:16px">answers<li>' +
+//       '<li style="display:none">id1</li>' +
+//       "</ul>" +
+//       "</div>" +
+//       '<div class="col-sm-12">' +
+//       '<ul class="list-group" style="list-style-type: none">' +
+//       '<li><input type="radio" name="age" id="myBtn2" value="id2" onclick=" myFunction2()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:16px;font-family: calibri regular" hspace="20">answers1<li>' +
+//       '<li style="display:none">id2</li>' +
+//       "</ul>" +
+//       "</div>" +
+//       '<div class="col-sm-12">' +
+//       '<ul class="list-group" style="list-style-type: none">' +
+//       '<li><input type="radio" name="age" id="myBtn3" value="id3"onclick=" myFunction3()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:16px;font-family: calibri regular">answers2<li>' +
+//       '<li style="display:none">id3</li>' +
+//       "</ul>" +
+//       "</div>" +
+//       '<div class="col-sm-12">' +
+//       '<ul class="list-group" style="list-style-type: none">' +
+//       '<li><input type="radio" name="age" id="myBtn4" value="id4" onclick=" myFunction4()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b id="data" style="color:444444;font-size:16px;font-family: calibri regular">answers3<li>' +
+//       '<li style="display:none">id4</li>' +
+//       "</ul>" +
+//       "</div>" +
+//       '<div class="col-sm-12">' +
+//       '<ul class="list-group" style="list-style-type: none">' +
+//       '<li><input type="radio" name="age" id="myBtn5" value="id5" onclick=" myFunction5()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b id="data" style="color:444444;font-size:16px;font-family: calibri regular">answers4<li>' +
+//       '<li style="display:none">id5</li>' +
+//       "</ul>" +
+//       "</div>" +
+//       "</div></div>";
+
+//     var collection = "";
+
+//     var i = 0;
+
+//     var ele = "";
+
+//     ele = page1;
+
+//     var cate1 = obj.question;
+//     var image1 = obj.question_type;
+
+//     var qesn = obj.choice[0].choice;
+//     var qesn1 = obj.choice[1].choice;
+//     var qesn2 = obj.choice[2].choice;
+//     var qesn3 = obj.choice[3].choice;
+//     var qesn4 = obj.choice[4].choice;
+
+//     var id1 = obj.choice[0].id;
+//     var id2 = obj.choice[1].id;
+//     var id3 = obj.choice[2].id;
+//     var id4 = obj.choice[3].id;
+//     var id5 = obj.choice[4].id;
+
+//     ele = ele.replace("Assesment", "Single Choice");
+//     ele = ele.replace("cate1", cate1);
+
+//     ele = ele.replace("answers", qesn);
+//     ele = ele.replace("answers1", qesn1);
+//     ele = ele.replace("answers2", qesn2);
+//     ele = ele.replace("answers3", qesn3);
+//     ele = ele.replace("answers4", qesn4);
+
+//     ele = ele.replace("id1", id1);
+//     ele = ele.replace("id2", id2);
+//     ele = ele.replace("id3", id3);
+//     ele = ele.replace("id4", id4);
+//     ele = ele.replace("id5", id5);
+
+//     collection = ele;
+
+//     $("#bodypage").html(collection);
+//   }
+// }
+
+// function myFunction1() {
+//   var x = document.getElementById("myBtn1").value;
+//   localStorage["key"] = x;
+// }
+
+// function myFunction2() {
+//   var x = document.getElementById("myBtn2").value;
+//   localStorage["key"] = x;
+// }
+// function myFunction3() {
+//   var x = document.getElementById("myBtn3").value;
+
+//   localStorage["key"] = x;
+// }
+// function myFunction4() {
+//   var x = document.getElementById("myBtn4").value;
+
+//   localStorage["key"] = x;
+// }
+// function myFunction5() {
+//   var x = document.getElementById("myBtn5").value;
+
+//   localStorage["key"] = x;
+// }
+
 function question1(data) {
   var obj = data.question;
+  var choice_length = obj.choice.length;
 
-  if (obj.choice.length == "4") {
-    var page1 =
-      '<div class="col-sm-4">' +
-      '<h2 style="text-align: center;font-family:calibri bold;color:#545454;width: 70%;border-bottom: 2px solid red;" >Assesment</h2>' +
-      " </div><br>" +
-      '<div class="col-sm-12">' +
-      '<h6 style="font-family: calibri regular;color: #444444;font-size:20px;">cate1</h6>' +
-      "</div><br>" +
-      '<div class="col-sm-12">' +
-      '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn1" value="id1" onclick=" myFunction1()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:#444444;font-family: calibri regular;font-size:16px">answers<li>' +
-      '<li style="display:none">id1</li>' +
-      "</ul>" +
-      "</div>" +
-      '<div class="col-sm-12">' +
-      '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn2" value="id2" onclick=" myFunction2()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:16px;font-family: calibri regular" hspace="20">answers1<li>' +
-      '<li style="display:none">id2</li>' +
-      "</ul>" +
-      "</div>" +
+  var page1 =
+    '<div class="col-sm-4">' +
+    '<h2 style="text-align: center;font-family:calibri bold;color:#545454;width: 70%;border-bottom: 2px solid red;" >Assessment</h2>' +
+    "</div><br>" +
+    '<div class="col-sm-12">' +
+    '<h6 style="font-family: calibri regular;color: #444444;font-size:20px;">' +
+    obj.question +
+    "</h6>" +
+    "</div><br>";
+
+  for (var i = 0; i < choice_length; i++) {
+    var choice = obj.choice[i].choice;
+    var id = obj.choice[i].id;
+
+    page1 +=
       '<div class="col-sm-12">' +
       '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn3" value="id3"onclick=" myFunction3()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:16px;font-family: calibri regular">answers2<li>' +
-      '<li style="display:none">id3</li>' +
+      '<li><input type="radio" name="age" id="myBtn' +
+      (i + 1) +
+      '" value="' +
+      id +
+      '" onclick="myFunction(' +
+      (i + 1) +
+      ')" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:16px;font-family: calibri regular">' +
+      choice +
+      '<li>' +
       "</ul>" +
-      "</div>" +
-      '<div class="col-sm-12">' +
-      '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn4" value="id4" onclick=" myFunction4()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b id="data" style="color:444444;font-size:16px;font-family: calibri regular">answers3<li>' +
-      '<li style="display:none">id4</li>' +
-      "</ul>" +
-      "</div>" +
-      "</div></div>";
-
-    var collection = "";
-
-    var i = 0;
-
-    var ele = "";
-
-    ele = page1;
-
-    var cate1 = obj.question;
-    var image1 = obj.question_type;
-
-    var qesn = obj.choice[0].choice;
-    var qesn1 = obj.choice[1].choice;
-    var qesn2 = obj.choice[2].choice;
-    var qesn3 = obj.choice[3].choice;
-
-    var id1 = obj.choice[0].id;
-    var id2 = obj.choice[1].id;
-    var id3 = obj.choice[2].id;
-    var id4 = obj.choice[3].id;
-
-    ele = ele.replace("Assesment", "Single Choice");
-    ele = ele.replace("cate1", cate1);
-
-    ele = ele.replace("answers", qesn);
-    ele = ele.replace("answers1", qesn1);
-    ele = ele.replace("answers2", qesn2);
-    ele = ele.replace("answers3", qesn3);
-
-    ele = ele.replace("id1", id1);
-    ele = ele.replace("id2", id2);
-    ele = ele.replace("id3", id3);
-    ele = ele.replace("id4", id4);
-
-    collection = ele;
-
-    $("#bodypage").html(collection);
-  } else if (obj.choice.length == "3") {
-    var page1 =
-      '<div class="col-sm-4">' +
-      '<h2 style="text-align: center;font-family:calibri bold;color:#545454;width: 70%;border-bottom: 2px solid red;" >Assesment</h2>' +
-      " </div><br>" +
-      '<div class="col-sm-12">' +
-      '<h6 style="font-family: calibri regular;color: #444444;font-size:20px;">cate1</h6>' +
-      "</div><br>" +
-      '<div class="col-sm-12">' +
-      '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn1" value="id1" onclick=" myFunction1()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:#444444;font-family: calibri regular;font-size:16px">answers<li>' +
-      '<li style="display:none">id1</li>' +
-      "</ul>" +
-      "</div>" +
-      '<div class="col-sm-12">' +
-      '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn2" value="id2" onclick=" myFunction2()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:16px;font-family: calibri regular" hspace="20">answers1<li>' +
-      '<li style="display:none">id2</li>' +
-      "</ul>" +
-      "</div>" +
-      '<div class="col-sm-12">' +
-      '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn3" value="id3"onclick=" myFunction3()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:16px;font-family: calibri regular">answers2<li>' +
-      '<li style="display:none">id3</li>' +
-      "</ul>" +
-      "</div>" +
-      "</div></div>";
-
-    var collection = "";
-
-    var i = 0;
-
-    var ele = "";
-
-    ele = page1;
-
-    var cate1 = obj.question;
-    var image1 = obj.question_type;
-
-    var qesn = obj.choice[0].choice;
-    var qesn1 = obj.choice[1].choice;
-    var qesn2 = obj.choice[2].choice;
-
-    var id1 = obj.choice[0].id;
-    var id2 = obj.choice[1].id;
-    var id3 = obj.choice[2].id;
-
-    ele = ele.replace("Assesment", "Single Choice");
-    ele = ele.replace("cate1", cate1);
-
-    ele = ele.replace("answers", qesn);
-    ele = ele.replace("answers1", qesn1);
-    ele = ele.replace("answers2", qesn2);
-
-    ele = ele.replace("id1", id1);
-    ele = ele.replace("id2", id2);
-    ele = ele.replace("id3", id3);
-
-    collection = ele;
-
-    $("#bodypage").html(collection);
-  } else if (obj.choice.length == "2") {
-    var page1 =
-      '<div class="col-sm-4">' +
-      '<h2 style="text-align: center;font-family:calibri bold;color:#545454;width: 70%;border-bottom: 2px solid red;" >Assesment</h2>' +
-      " </div><br>" +
-      '<div class="col-sm-12">' +
-      '<h6 style="font-family: calibri regular;color: #444444;font-size:20px;">cate1</h6>' +
-      "</div><br>" +
-      '<div class="col-sm-12">' +
-      '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn1" value="id1" onclick=" myFunction1()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:#444444;font-family: calibri regular;font-size:16px">answers<li>' +
-      '<li style="display:none">id1</li>' +
-      "</ul>" +
-      "</div>" +
-      '<div class="col-sm-12">' +
-      '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn2" value="id2" onclick=" myFunction2()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:16px;font-family: calibri regular" hspace="20">answers1<li>' +
-      '<li style="display:none">id2</li>' +
-      "</ul>" +
-      "</div>" +
-      "</div></div>";
-
-    var collection = "";
-
-    var i = 0;
-
-    var ele = "";
-
-    ele = page1;
-
-    var cate1 = obj.question;
-    var image1 = obj.question_type;
-
-    var qesn = obj.choice[0].choice;
-    var qesn1 = obj.choice[1].choice;
-
-    var id1 = obj.choice[0].id;
-    var id2 = obj.choice[1].id;
-
-    ele = ele.replace("Assesment", "Single Choice");
-    ele = ele.replace("cate1", cate1);
-
-    ele = ele.replace("answers", qesn);
-    ele = ele.replace("answers1", qesn1);
-
-    ele = ele.replace("id1", id1);
-    ele = ele.replace("id2", id2);
-
-    collection = ele;
-
-    $("#bodypage").html(collection);
-  } else if (obj.choice.length == "5") {
-    var page1 =
-      '<div class="col-sm-4">' +
-      '<h2 style="text-align: center;font-family:calibri bold;color:#545454;width: 70%;border-bottom: 2px solid red;" >Assesment</h2>' +
-      " </div><br>" +
-      '<div class="col-sm-12">' +
-      '<h6 style="font-family: calibri regular;color: #444444;font-size:20px;">cate1</h6>' +
-      "</div><br>" +
-      '<div class="col-sm-12">' +
-      '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn1" value="id1" onclick=" myFunction1()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:#444444;font-family: calibri regular;font-size:16px">answers<li>' +
-      '<li style="display:none">id1</li>' +
-      "</ul>" +
-      "</div>" +
-      '<div class="col-sm-12">' +
-      '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn2" value="id2" onclick=" myFunction2()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:16px;font-family: calibri regular" hspace="20">answers1<li>' +
-      '<li style="display:none">id2</li>' +
-      "</ul>" +
-      "</div>" +
-      '<div class="col-sm-12">' +
-      '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn3" value="id3"onclick=" myFunction3()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:16px;font-family: calibri regular">answers2<li>' +
-      '<li style="display:none">id3</li>' +
-      "</ul>" +
-      "</div>" +
-      '<div class="col-sm-12">' +
-      '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn4" value="id4" onclick=" myFunction4()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b id="data" style="color:444444;font-size:16px;font-family: calibri regular">answers3<li>' +
-      '<li style="display:none">id4</li>' +
-      "</ul>" +
-      "</div>" +
-      '<div class="col-sm-12">' +
-      '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn5" value="id5" onclick=" myFunction5()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b id="data" style="color:444444;font-size:16px;font-family: calibri regular">answers4<li>' +
-      '<li style="display:none">id5</li>' +
-      "</ul>" +
-      "</div>" +
-      "</div></div>";
-
-    var collection = "";
-
-    var i = 0;
-
-    var ele = "";
-
-    ele = page1;
-
-    var cate1 = obj.question;
-    var image1 = obj.question_type;
-
-    var qesn = obj.choice[0].choice;
-    var qesn1 = obj.choice[1].choice;
-    var qesn2 = obj.choice[2].choice;
-    var qesn3 = obj.choice[3].choice;
-    var qesn4 = obj.choice[4].choice;
-
-    var id1 = obj.choice[0].id;
-    var id2 = obj.choice[1].id;
-    var id3 = obj.choice[2].id;
-    var id4 = obj.choice[3].id;
-    var id5 = obj.choice[4].id;
-
-    ele = ele.replace("Assesment", "Single Choice");
-    ele = ele.replace("cate1", cate1);
-
-    ele = ele.replace("answers", qesn);
-    ele = ele.replace("answers1", qesn1);
-    ele = ele.replace("answers2", qesn2);
-    ele = ele.replace("answers3", qesn3);
-    ele = ele.replace("answers4", qesn4);
-
-    ele = ele.replace("id1", id1);
-    ele = ele.replace("id2", id2);
-    ele = ele.replace("id3", id3);
-    ele = ele.replace("id4", id4);
-    ele = ele.replace("id5", id5);
-
-    collection = ele;
-
-    $("#bodypage").html(collection);
+      "</div>";
   }
+
+  page1 += "</div>";
+
+  $("#bodypage").html(page1);
 }
 
-function myFunction1() {
-  var x = document.getElementById("myBtn1").value;
-  localStorage["key"] = x;
+function myFunction(index) {
+  var x = document.getElementById("myBtn" + index).value;
+  localStorage.setItem("key", x);
 }
 
-function myFunction2() {
-  var x = document.getElementById("myBtn2").value;
-  localStorage["key"] = x;
-}
-function myFunction3() {
-  var x = document.getElementById("myBtn3").value;
-
-  localStorage["key"] = x;
-}
-function myFunction4() {
-  var x = document.getElementById("myBtn4").value;
-
-  localStorage["key"] = x;
-}
-function myFunction5() {
-  var x = document.getElementById("myBtn5").value;
-
-  localStorage["key"] = x;
-}
 
 function question2(data) {
   var obj = data.question;
