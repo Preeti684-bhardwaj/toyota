@@ -719,9 +719,10 @@ alert(value)
     data:"json",
     success: function(data){
       var status = data.status;
-      if (status === "success" && value) {
+      alert(value)
+      if (status === "success") {
         get_next_qn();
-        alert(data);
+        alert(status);
         // Display an alert after successful submission
         alert("Answer submitted successfully!");
       } else {
