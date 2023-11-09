@@ -713,8 +713,7 @@ alert(value)
       question_id +
       "&elapsed_time=" +
       elapsed_time +
-      "&answer=" +
-      value +
+      "&answer=" +"hii i am value" +
       "",
     type: "GET",
     data:"json",
