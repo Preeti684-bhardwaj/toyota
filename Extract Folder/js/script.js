@@ -721,7 +721,7 @@ alert(value)
       var status = data.status;
       if (status === "success" && value) {
         get_next_qn();
-        alert(status);
+        alert(data);
         // Display an alert after successful submission
         alert("Answer submitted successfully!");
       } else {
