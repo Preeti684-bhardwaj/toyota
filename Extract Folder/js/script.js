@@ -722,7 +722,7 @@ function submitanswer() {
       value +
       "",
     type: "GET",
-    dataType: "json",
+    data:"json",
     success: function (data) {
       var status = data.status;
       console.log(status);
@@ -732,7 +732,7 @@ function submitanswer() {
         // Display an alert after successful submission
         alert("Answer submitted successfully!");
       } else {
-        alert("Error");
+        alert("LocalStorage is not supported on this browser.");
       }
     },
   }).done(function () {
