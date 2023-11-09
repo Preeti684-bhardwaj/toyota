@@ -732,7 +732,7 @@ function submitanswer() {
         // Display an alert after successful submission
         alert("Answer submitted successfully!");
       } else {
-        alert("LocalStorage is not supported on this browser.");
+        alert("Error");
       }
     },
   }).done(function () {
