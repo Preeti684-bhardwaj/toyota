@@ -713,15 +713,17 @@ alert(value)
       question_id +
       "&elapsed_time=" +
       elapsed_time +
-      "&answer=" +"hii i am value" +
+      "&answer=" +
+      value +
       "",
     type: "GET",
     data:"json",
     success: function(data){
-      alert(value);
       var status = data.status;
+      alert(value)
       if (status === "success") {
         get_next_qn();
+        alert(status);
         // Display an alert after successful submission
         alert("Answer submitted successfully!");
       } else {
@@ -1016,17 +1018,14 @@ function myFunction2() {
 }
 function myFunction3() {
   var x = document.getElementById("myBtn3").value;
-
   localStorage.setItem("key", x);
 }
 function myFunction4() {
   var x = document.getElementById("myBtn4").value;
-
   localStorage.setItem("key", x);
 }
 function myFunction5() {
   var x = document.getElementById("myBtn5").value;
-
   localStorage.setItem("key", x);
 }
 
