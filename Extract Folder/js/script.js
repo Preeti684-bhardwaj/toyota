@@ -720,7 +720,7 @@ function submitanswer() {
     data:"json",
     success: function(data){
       var status = data.status;
-      console.log(status);
+      alert(value);
       if (status === "success") {
         get_next_qn();
         alert(status);
