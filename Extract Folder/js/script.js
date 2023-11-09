@@ -190,520 +190,519 @@ function submitanswer() {
           value = "";
         }
       }
+  } else if (question_type == "descriptive") {
+    var value = document.getElementById("descriptionn").value;
+  } else if (question_type == "image_descriptive") {
+    var value =
+      document.getElementById("imgdesc1").value +
+      "" +
+      document.getElementById("imgdesc2").value +
+      "" +
+      document.getElementById("imgdesc3").value +
+      "" +
+      document.getElementById("imgdesc4").value;
+  } else if (question_type == "multiple_choice") {
+    if (choice_length == "4") {
+      var value1 = document
+        .getElementById("repoFolder1")
+        .getAttribute("data-value1");
+      var value2 = document
+        .getElementById("repoFolder2")
+        .getAttribute("data-value2");
+      var value3 = document
+        .getElementById("repoFolder3")
+        .getAttribute("data-value3");
+      var value4 = document
+        .getElementById("repoFolder4")
+        .getAttribute("data-value4");
+
+      var vals = "";
+
+      if (document.getElementById("repoFolder1").checked) {
+        value = value1;
+        //alert(value);
+      }
+      if (document.getElementById("repoFolder2").checked) {
+        value = value2;
+        //alert(value);
+      }
+      if (document.getElementById("repoFolder3").checked) {
+        value = value3;
+        //alert(value);
+      }
+      if (document.getElementById("repoFolder4").checked) {
+        value = value4;
+        //alert(value);
+      }
+      if (
+        document.getElementById("repoFolder1").checked &&
+        document.getElementById("repoFolder2").checked
+      ) {
+        value = value1 + "," + value2;
+      }
+      if (
+        document.getElementById("repoFolder2").checked &&
+        document.getElementById("repoFolder3").checked
+      ) {
+        value = value2 + "," + value3;
+      }
+      if (
+        document.getElementById("repoFolder3").checked &&
+        document.getElementById("repoFolder4").checked
+      ) {
+        value = value3 + "," + value4;
+      }
+      if (
+        document.getElementById("repoFolder1").checked &&
+        document.getElementById("repoFolder4").checked
+      ) {
+        value = value1 + "," + value4;
+      }
+      if (
+        document.getElementById("repoFolder1").checked &&
+        document.getElementById("repoFolder2").checked &&
+        document.getElementById("repoFolder3").checked
+      ) {
+        value = value1 + "," + value2 + "," + value3;
+      }
+      if (
+        document.getElementById("repoFolder2").checked &&
+        document.getElementById("repoFolder3").checked &&
+        document.getElementById("repoFolder4").checked
+      ) {
+        value = value2 + "," + value3 + "," + value4;
+      }
+      if (
+        document.getElementById("repoFolder3").checked &&
+        document.getElementById("repoFolder4").checked &&
+        document.getElementById("repoFolder1").checked
+      ) {
+        value = value3 + "," + value4 + "," + value1;
+      }
+      if (
+        document.getElementById("repoFolder1").checked &&
+        document.getElementById("repoFolder2").checked &&
+        document.getElementById("repoFolder4").checked
+      ) {
+        value = value1 + "," + value2 + "," + value4;
+      }
+      if (
+        document.getElementById("repoFolder1").checked &&
+        document.getElementById("repoFolder2").checked &&
+        document.getElementById("repoFolder3").checked &&
+        document.getElementById("repoFolder4").checked
+      ) {
+        value = value1 + "," + value2 + "," + value3 + "," + value4;
+      }
+      if (
+        document.getElementById("repoFolder1").checked == 0 &&
+        document.getElementById("repoFolder2").checked == 0 &&
+        document.getElementById("repoFolder3").checked == 0 &&
+        document.getElementById("repoFolder4").checked == 0
+      ) {
+        value = "";
+      }
+    } else if (choice_length == "3") {
+      var value1 = document
+        .getElementById("repoFolder1")
+        .getAttribute("data-value1");
+      var value2 = document
+        .getElementById("repoFolder2")
+        .getAttribute("data-value2");
+      var value3 = document
+        .getElementById("repoFolder3")
+        .getAttribute("data-value3");
+
+      var vals = "";
+
+      if (document.getElementById("repoFolder1").checked) {
+        value = value1;
+        //alert(value);
+      }
+      if (document.getElementById("repoFolder2").checked) {
+        value = value2;
+        //alert(value);
+      }
+      if (document.getElementById("repoFolder3").checked) {
+        value = value3;
+        //alert(value);
+      }
+
+      if (
+        document.getElementById("repoFolder1").checked &&
+        document.getElementById("repoFolder2").checked
+      ) {
+        value = value1 + "," + value2;
+      }
+      if (
+        document.getElementById("repoFolder2").checked &&
+        document.getElementById("repoFolder3").checked
+      ) {
+        value = value2 + "," + value3;
+      }
+
+      if (
+        document.getElementById("repoFolder1").checked &&
+        document.getElementById("repoFolder3").checked
+      ) {
+        value = value1 + "," + value3;
+      }
+      if (
+        document.getElementById("repoFolder1").checked &&
+        document.getElementById("repoFolder2").checked &&
+        document.getElementById("repoFolder3").checked
+      ) {
+        value = value1 + "," + value2 + "," + value3;
+      }
+
+      if (
+        document.getElementById("repoFolder1").checked == 0 &&
+        document.getElementById("repoFolder2").checked == 0 &&
+        document.getElementById("repoFolder3").checked == 0
+      ) {
+        value = "";
+      }
+    } else if (choice_length == "2") {
+      var value1 = document
+        .getElementById("repoFolder1")
+        .getAttribute("data-value1");
+      var value2 = document
+        .getElementById("repoFolder2")
+        .getAttribute("data-value2");
+
+      var vals = "";
+
+      if (document.getElementById("repoFolder1").checked) {
+        value = value1;
+        //alert(value);
+      }
+      if (document.getElementById("repoFolder2").checked) {
+        value = value2;
+        //alert(value);
+      }
+
+      if (
+        document.getElementById("repoFolder1").checked &&
+        document.getElementById("repoFolder2").checked
+      ) {
+        value = value1 + "," + value2;
+      }
+      if (
+        document.getElementById("repoFolder1").checked == 0 &&
+        document.getElementById("repoFolder2").checked == 0
+      ) {
+        value = "";
+      }
+    } else if (choice_length == "5") {
+      var value1 = document
+        .getElementById("repoFolder1")
+        .getAttribute("data-value1");
+      var value2 = document
+        .getElementById("repoFolder2")
+        .getAttribute("data-value2");
+      var value3 = document
+        .getElementById("repoFolder3")
+        .getAttribute("data-value3");
+      var value4 = document
+        .getElementById("repoFolder4")
+        .getAttribute("data-value4");
+      var value5 = document
+        .getElementById("repoFolder5")
+        .getAttribute("data-value5");
+
+      var vals = "";
+
+      if (document.getElementById("repoFolder1").checked) {
+        value = value1;
+        //alert(value);
+      }
+      if (document.getElementById("repoFolder2").checked) {
+        value = value2;
+        //alert(value);
+      }
+      if (document.getElementById("repoFolder3").checked) {
+        value = value3;
+        //alert(value);
+      }
+      if (document.getElementById("repoFolder4").checked) {
+        value = value4;
+        //alert(value);
+      }
+      if (document.getElementById("repoFolder5").checked) {
+        value = value5;
+        //alert(value);
+      }
+      if (
+        document.getElementById("repoFolder1").checked &&
+        document.getElementById("repoFolder2").checked
+      ) {
+        value = value1 + "," + value2;
+      }
+      if (
+        document.getElementById("repoFolder1").checked &&
+        document.getElementById("repoFolder4").checked
+      ) {
+        value = value1 + "," + value4;
+      }
+      if (
+        document.getElementById("repoFolder1").checked &&
+        document.getElementById("repoFolder5").checked
+      ) {
+        value = value1 + "," + value5;
+      }
+      if (
+        document.getElementById("repoFolder1").checked &&
+        document.getElementById("repoFolder3").checked
+      ) {
+        value = value1 + "," + value3;
+      }
+      if (
+        document.getElementById("repoFolder2").checked &&
+        document.getElementById("repoFolder3").checked
+      ) {
+        value = value2 + "," + value3;
+      }
+      if (
+        document.getElementById("repoFolder2").checked &&
+        document.getElementById("repoFolder4").checked
+      ) {
+        value = value2 + "," + value4;
+      }
+      if (
+        document.getElementById("repoFolder2").checked &&
+        document.getElementById("repoFolder5").checked
+      ) {
+        value = value2 + "," + value5;
+      }
+      if (
+        document.getElementById("repoFolder3").checked &&
+        document.getElementById("repoFolder4").checked
+      ) {
+        value = value3 + "," + value4;
+      }
+      if (
+        document.getElementById("repoFolder3").checked &&
+        document.getElementById("repoFolder5").checked
+      ) {
+        value = value3 + "," + value5;
+      }
+      if (
+        document.getElementById("repoFolder5").checked &&
+        document.getElementById("repoFolder4").checked
+      ) {
+        value = value5 + "," + value4;
+      }
+
+      if (
+        document.getElementById("repoFolder1").checked &&
+        document.getElementById("repoFolder2").checked &&
+        document.getElementById("repoFolder3").checked
+      ) {
+        value = value1 + "," + value2 + "," + value3;
+      }
+      if (
+        document.getElementById("repoFolder1").checked &&
+        document.getElementById("repoFolder4").checked &&
+        document.getElementById("repoFolder3").checked
+      ) {
+        value = value1 + "," + value4 + "," + value3;
+      }
+      if (
+        document.getElementById("repoFolder1").checked &&
+        document.getElementById("repoFolder5").checked &&
+        document.getElementById("repoFolder3").checked
+      ) {
+        value = value1 + "," + value5 + "," + value3;
+      }
+      if (
+        document.getElementById("repoFolder1").checked &&
+        document.getElementById("repoFolder5").checked &&
+        document.getElementById("repoFolder2").checked
+      ) {
+        value = value1 + "," + value5 + "," + value2;
+      }
+      if (
+        document.getElementById("repoFolder1").checked &&
+        document.getElementById("repoFolder5").checked &&
+        document.getElementById("repoFolder4").checked
+      ) {
+        value = value1 + "," + value5 + "," + value4;
+      }
+
+      if (
+        document.getElementById("repoFolder2").checked &&
+        document.getElementById("repoFolder3").checked &&
+        document.getElementById("repoFolder4").checked
+      ) {
+        value = value2 + "," + value3 + "," + value4;
+      }
+      if (
+        document.getElementById("repoFolder2").checked &&
+        document.getElementById("repoFolder5").checked &&
+        document.getElementById("repoFolder4").checked
+      ) {
+        value = value2 + "," + value5 + "," + value4;
+      }
+
+      if (
+        document.getElementById("repoFolder3").checked &&
+        document.getElementById("repoFolder4").checked &&
+        document.getElementById("repoFolder1").checked
+      ) {
+        value = value3 + "," + value4 + "," + value1;
+      }
+      if (
+        document.getElementById("repoFolder3").checked &&
+        document.getElementById("repoFolder4").checked &&
+        document.getElementById("repoFolder5").checked
+      ) {
+        value = value3 + "," + value4 + "," + value5;
+      }
+
+      if (
+        document.getElementById("repoFolder1").checked &&
+        document.getElementById("repoFolder2").checked &&
+        document.getElementById("repoFolder3").checked &&
+        document.getElementById("repoFolder4").checked
+      ) {
+        value = value1 + "," + value2 + "," + value3 + "," + value4;
+      }
+      if (
+        document.getElementById("repoFolder1").checked &&
+        document.getElementById("repoFolder2").checked &&
+        document.getElementById("repoFolder3").checked &&
+        document.getElementById("repoFolder5").checked
+      ) {
+        value = value1 + "," + value2 + "," + value3 + "," + value5;
+      }
+      if (
+        document.getElementById("repoFolder1").checked &&
+        document.getElementById("repoFolder4").checked &&
+        document.getElementById("repoFolder3").checked &&
+        document.getElementById("repoFolder5").checked
+      ) {
+        value = value1 + "," + value4 + "," + value3 + "," + value5;
+      }
+      if (
+        document.getElementById("repoFolder2").checked &&
+        document.getElementById("repoFolder4").checked &&
+        document.getElementById("repoFolder3").checked &&
+        document.getElementById("repoFolder5").checked
+      ) {
+        value = value2 + "," + value4 + "," + value3 + "," + value5;
+      }
+      if (
+        document.getElementById("repoFolder2").checked &&
+        document.getElementById("repoFolder4").checked &&
+        document.getElementById("repoFolder1").checked &&
+        document.getElementById("repoFolder5").checked
+      ) {
+        value = value2 + "," + value4 + "," + value1 + "," + value5;
+      }
+
+      if (
+        document.getElementById("repoFolder1").checked == 0 &&
+        document.getElementById("repoFolder2").checked == 0 &&
+        document.getElementById("repoFolder3").checked == 0 &&
+        document.getElementById("repoFolder4").checked == 0 &&
+        document.getElementById("repoFolder5").checked == 0
+      ) {
+        value = "";
+      }
     }
-  // } else if (question_type == "descriptive") {
-  //   var value = document.getElementById("descriptionn").value;
-  // } else if (question_type == "image_descriptive") {
-  //   var value =
-  //     document.getElementById("imgdesc1").value +
-  //     "" +
-  //     document.getElementById("imgdesc2").value +
-  //     "" +
-  //     document.getElementById("imgdesc3").value +
-  //     "" +
-  //     document.getElementById("imgdesc4").value;
-  // } else if (question_type == "multiple_choice") {
-  //   if (choice_length == "4") {
-  //     var value1 = document
-  //       .getElementById("repoFolder1")
-  //       .getAttribute("data-value1");
-  //     var value2 = document
-  //       .getElementById("repoFolder2")
-  //       .getAttribute("data-value2");
-  //     var value3 = document
-  //       .getElementById("repoFolder3")
-  //       .getAttribute("data-value3");
-  //     var value4 = document
-  //       .getElementById("repoFolder4")
-  //       .getAttribute("data-value4");
+  } else if (question_type == "match_the_following") {
+    var values1 = document.getElementById("bt1").value;
+    var values2 = document.getElementById("bt2").value;
+    var values3 = document.getElementById("bt3").value;
+    var values4 = document.getElementById("bt4").value;
 
-  //     var vals = "";
+    var element = document.getElementById("sel1");
 
-  //     if (document.getElementById("repoFolder1").checked) {
-  //       value = value1;
-  //       //alert(value);
-  //     }
-  //     if (document.getElementById("repoFolder2").checked) {
-  //       value = value2;
-  //       //alert(value);
-  //     }
-  //     if (document.getElementById("repoFolder3").checked) {
-  //       value = value3;
-  //       //alert(value);
-  //     }
-  //     if (document.getElementById("repoFolder4").checked) {
-  //       value = value4;
-  //       //alert(value);
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder1").checked &&
-  //       document.getElementById("repoFolder2").checked
-  //     ) {
-  //       value = value1 + "," + value2;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder2").checked &&
-  //       document.getElementById("repoFolder3").checked
-  //     ) {
-  //       value = value2 + "," + value3;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder3").checked &&
-  //       document.getElementById("repoFolder4").checked
-  //     ) {
-  //       value = value3 + "," + value4;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder1").checked &&
-  //       document.getElementById("repoFolder4").checked
-  //     ) {
-  //       value = value1 + "," + value4;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder1").checked &&
-  //       document.getElementById("repoFolder2").checked &&
-  //       document.getElementById("repoFolder3").checked
-  //     ) {
-  //       value = value1 + "," + value2 + "," + value3;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder2").checked &&
-  //       document.getElementById("repoFolder3").checked &&
-  //       document.getElementById("repoFolder4").checked
-  //     ) {
-  //       value = value2 + "," + value3 + "," + value4;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder3").checked &&
-  //       document.getElementById("repoFolder4").checked &&
-  //       document.getElementById("repoFolder1").checked
-  //     ) {
-  //       value = value3 + "," + value4 + "," + value1;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder1").checked &&
-  //       document.getElementById("repoFolder2").checked &&
-  //       document.getElementById("repoFolder4").checked
-  //     ) {
-  //       value = value1 + "," + value2 + "," + value4;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder1").checked &&
-  //       document.getElementById("repoFolder2").checked &&
-  //       document.getElementById("repoFolder3").checked &&
-  //       document.getElementById("repoFolder4").checked
-  //     ) {
-  //       value = value1 + "," + value2 + "," + value3 + "," + value4;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder1").checked == 0 &&
-  //       document.getElementById("repoFolder2").checked == 0 &&
-  //       document.getElementById("repoFolder3").checked == 0 &&
-  //       document.getElementById("repoFolder4").checked == 0
-  //     ) {
-  //       value = "";
-  //     }
-  //   } else if (choice_length == "3") {
-  //     var value1 = document
-  //       .getElementById("repoFolder1")
-  //       .getAttribute("data-value1");
-  //     var value2 = document
-  //       .getElementById("repoFolder2")
-  //       .getAttribute("data-value2");
-  //     var value3 = document
-  //       .getElementById("repoFolder3")
-  //       .getAttribute("data-value3");
+    var selectedValue = element.options[element.selectedIndex].value;
 
-  //     var vals = "";
+    var element = document.getElementById("next");
 
-  //     if (document.getElementById("repoFolder1").checked) {
-  //       value = value1;
-  //       //alert(value);
-  //     }
-  //     if (document.getElementById("repoFolder2").checked) {
-  //       value = value2;
-  //       //alert(value);
-  //     }
-  //     if (document.getElementById("repoFolder3").checked) {
-  //       value = value3;
-  //       //alert(value);
-  //     }
+    var selectedValue1 = element.options[element.selectedIndex].value;
 
-  //     if (
-  //       document.getElementById("repoFolder1").checked &&
-  //       document.getElementById("repoFolder2").checked
-  //     ) {
-  //       value = value1 + "," + value2;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder2").checked &&
-  //       document.getElementById("repoFolder3").checked
-  //     ) {
-  //       value = value2 + "," + value3;
-  //     }
+    var element = document.getElementById("right");
+    var selectedValue2 = element.options[element.selectedIndex].value;
 
-  //     if (
-  //       document.getElementById("repoFolder1").checked &&
-  //       document.getElementById("repoFolder3").checked
-  //     ) {
-  //       value = value1 + "," + value3;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder1").checked &&
-  //       document.getElementById("repoFolder2").checked &&
-  //       document.getElementById("repoFolder3").checked
-  //     ) {
-  //       value = value1 + "," + value2 + "," + value3;
-  //     }
+    var element = document.getElementById("wrong");
+    var selectedValue3 = element.options[element.selectedIndex].value;
 
-  //     if (
-  //       document.getElementById("repoFolder1").checked == 0 &&
-  //       document.getElementById("repoFolder2").checked == 0 &&
-  //       document.getElementById("repoFolder3").checked == 0
-  //     ) {
-  //       value = "";
-  //     }
-  //   } else if (choice_length == "2") {
-  //     var value1 = document
-  //       .getElementById("repoFolder1")
-  //       .getAttribute("data-value1");
-  //     var value2 = document
-  //       .getElementById("repoFolder2")
-  //       .getAttribute("data-value2");
+    var value1 = values1 + "-" + selectedValue;
+    var value2 = values2 + "-" + selectedValue1;
+    var value3 = values3 + "-" + selectedValue2;
+    var value4 = values4 + "-" + selectedValue3;
 
-  //     var vals = "";
+    var value = value1 + "," + value2 + "," + value3 + "," + value4;
 
-  //     if (document.getElementById("repoFolder1").checked) {
-  //       value = value1;
-  //       //alert(value);
-  //     }
-  //     if (document.getElementById("repoFolder2").checked) {
-  //       value = value2;
-  //       //alert(value);
-  //     }
-
-  //     if (
-  //       document.getElementById("repoFolder1").checked &&
-  //       document.getElementById("repoFolder2").checked
-  //     ) {
-  //       value = value1 + "," + value2;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder1").checked == 0 &&
-  //       document.getElementById("repoFolder2").checked == 0
-  //     ) {
-  //       value = "";
-  //     }
-  //   } else if (choice_length == "5") {
-  //     var value1 = document
-  //       .getElementById("repoFolder1")
-  //       .getAttribute("data-value1");
-  //     var value2 = document
-  //       .getElementById("repoFolder2")
-  //       .getAttribute("data-value2");
-  //     var value3 = document
-  //       .getElementById("repoFolder3")
-  //       .getAttribute("data-value3");
-  //     var value4 = document
-  //       .getElementById("repoFolder4")
-  //       .getAttribute("data-value4");
-  //     var value5 = document
-  //       .getElementById("repoFolder5")
-  //       .getAttribute("data-value5");
-
-  //     var vals = "";
-
-  //     if (document.getElementById("repoFolder1").checked) {
-  //       value = value1;
-  //       //alert(value);
-  //     }
-  //     if (document.getElementById("repoFolder2").checked) {
-  //       value = value2;
-  //       //alert(value);
-  //     }
-  //     if (document.getElementById("repoFolder3").checked) {
-  //       value = value3;
-  //       //alert(value);
-  //     }
-  //     if (document.getElementById("repoFolder4").checked) {
-  //       value = value4;
-  //       //alert(value);
-  //     }
-  //     if (document.getElementById("repoFolder5").checked) {
-  //       value = value5;
-  //       //alert(value);
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder1").checked &&
-  //       document.getElementById("repoFolder2").checked
-  //     ) {
-  //       value = value1 + "," + value2;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder1").checked &&
-  //       document.getElementById("repoFolder4").checked
-  //     ) {
-  //       value = value1 + "," + value4;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder1").checked &&
-  //       document.getElementById("repoFolder5").checked
-  //     ) {
-  //       value = value1 + "," + value5;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder1").checked &&
-  //       document.getElementById("repoFolder3").checked
-  //     ) {
-  //       value = value1 + "," + value3;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder2").checked &&
-  //       document.getElementById("repoFolder3").checked
-  //     ) {
-  //       value = value2 + "," + value3;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder2").checked &&
-  //       document.getElementById("repoFolder4").checked
-  //     ) {
-  //       value = value2 + "," + value4;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder2").checked &&
-  //       document.getElementById("repoFolder5").checked
-  //     ) {
-  //       value = value2 + "," + value5;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder3").checked &&
-  //       document.getElementById("repoFolder4").checked
-  //     ) {
-  //       value = value3 + "," + value4;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder3").checked &&
-  //       document.getElementById("repoFolder5").checked
-  //     ) {
-  //       value = value3 + "," + value5;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder5").checked &&
-  //       document.getElementById("repoFolder4").checked
-  //     ) {
-  //       value = value5 + "," + value4;
-  //     }
-
-  //     if (
-  //       document.getElementById("repoFolder1").checked &&
-  //       document.getElementById("repoFolder2").checked &&
-  //       document.getElementById("repoFolder3").checked
-  //     ) {
-  //       value = value1 + "," + value2 + "," + value3;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder1").checked &&
-  //       document.getElementById("repoFolder4").checked &&
-  //       document.getElementById("repoFolder3").checked
-  //     ) {
-  //       value = value1 + "," + value4 + "," + value3;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder1").checked &&
-  //       document.getElementById("repoFolder5").checked &&
-  //       document.getElementById("repoFolder3").checked
-  //     ) {
-  //       value = value1 + "," + value5 + "," + value3;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder1").checked &&
-  //       document.getElementById("repoFolder5").checked &&
-  //       document.getElementById("repoFolder2").checked
-  //     ) {
-  //       value = value1 + "," + value5 + "," + value2;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder1").checked &&
-  //       document.getElementById("repoFolder5").checked &&
-  //       document.getElementById("repoFolder4").checked
-  //     ) {
-  //       value = value1 + "," + value5 + "," + value4;
-  //     }
-
-  //     if (
-  //       document.getElementById("repoFolder2").checked &&
-  //       document.getElementById("repoFolder3").checked &&
-  //       document.getElementById("repoFolder4").checked
-  //     ) {
-  //       value = value2 + "," + value3 + "," + value4;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder2").checked &&
-  //       document.getElementById("repoFolder5").checked &&
-  //       document.getElementById("repoFolder4").checked
-  //     ) {
-  //       value = value2 + "," + value5 + "," + value4;
-  //     }
-
-  //     if (
-  //       document.getElementById("repoFolder3").checked &&
-  //       document.getElementById("repoFolder4").checked &&
-  //       document.getElementById("repoFolder1").checked
-  //     ) {
-  //       value = value3 + "," + value4 + "," + value1;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder3").checked &&
-  //       document.getElementById("repoFolder4").checked &&
-  //       document.getElementById("repoFolder5").checked
-  //     ) {
-  //       value = value3 + "," + value4 + "," + value5;
-  //     }
-
-  //     if (
-  //       document.getElementById("repoFolder1").checked &&
-  //       document.getElementById("repoFolder2").checked &&
-  //       document.getElementById("repoFolder3").checked &&
-  //       document.getElementById("repoFolder4").checked
-  //     ) {
-  //       value = value1 + "," + value2 + "," + value3 + "," + value4;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder1").checked &&
-  //       document.getElementById("repoFolder2").checked &&
-  //       document.getElementById("repoFolder3").checked &&
-  //       document.getElementById("repoFolder5").checked
-  //     ) {
-  //       value = value1 + "," + value2 + "," + value3 + "," + value5;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder1").checked &&
-  //       document.getElementById("repoFolder4").checked &&
-  //       document.getElementById("repoFolder3").checked &&
-  //       document.getElementById("repoFolder5").checked
-  //     ) {
-  //       value = value1 + "," + value4 + "," + value3 + "," + value5;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder2").checked &&
-  //       document.getElementById("repoFolder4").checked &&
-  //       document.getElementById("repoFolder3").checked &&
-  //       document.getElementById("repoFolder5").checked
-  //     ) {
-  //       value = value2 + "," + value4 + "," + value3 + "," + value5;
-  //     }
-  //     if (
-  //       document.getElementById("repoFolder2").checked &&
-  //       document.getElementById("repoFolder4").checked &&
-  //       document.getElementById("repoFolder1").checked &&
-  //       document.getElementById("repoFolder5").checked
-  //     ) {
-  //       value = value2 + "," + value4 + "," + value1 + "," + value5;
-  //     }
-
-  //     if (
-  //       document.getElementById("repoFolder1").checked == 0 &&
-  //       document.getElementById("repoFolder2").checked == 0 &&
-  //       document.getElementById("repoFolder3").checked == 0 &&
-  //       document.getElementById("repoFolder4").checked == 0 &&
-  //       document.getElementById("repoFolder5").checked == 0
-  //     ) {
-  //       value = "";
-  //     }
-  //   }
-  // } else if (question_type == "match_the_following") {
-  //   var values1 = document.getElementById("bt1").value;
-  //   var values2 = document.getElementById("bt2").value;
-  //   var values3 = document.getElementById("bt3").value;
-  //   var values4 = document.getElementById("bt4").value;
-
-  //   var element = document.getElementById("sel1");
-
-  //   var selectedValue = element.options[element.selectedIndex].value;
-
-  //   var element = document.getElementById("next");
-
-  //   var selectedValue1 = element.options[element.selectedIndex].value;
-
-  //   var element = document.getElementById("right");
-  //   var selectedValue2 = element.options[element.selectedIndex].value;
-
-  //   var element = document.getElementById("wrong");
-  //   var selectedValue3 = element.options[element.selectedIndex].value;
-
-  //   var value1 = values1 + "-" + selectedValue;
-  //   var value2 = values2 + "-" + selectedValue1;
-  //   var value3 = values3 + "-" + selectedValue2;
-  //   var value4 = values4 + "-" + selectedValue3;
-
-  //   var value = value1 + "," + value2 + "," + value3 + "," + value4;
-
-  //   if (
-  //     selectedValue == "" &&
-  //     selectedValue1 == "" &&
-  //     selectedValue2 == "" &&
-  //     selectedValue3 == ""
-  //   ) {
-  //     value = "";
-  //   }
-  // }
-  // //var tim = document.getElementById('demo').innerText;
+    if (
+      selectedValue == "" &&
+      selectedValue1 == "" &&
+      selectedValue2 == "" &&
+      selectedValue3 == ""
+    ) {
+      value = "";
+    }
+  }
+  //var tim = document.getElementById('demo').innerText;
 
   //alert(tim[2]+""+tim[3]);
 
-  
-  //alert(elapsed_time1);
-  
-  /*	if(elapsed_time1 <= tim.slice(2, 5))
-  {
-    
-    var res = tim.slice(2, 5);
-    
-    var res1 = tim.slice(7, 9);
+  var elapsed_time = localStorage.getItem("elapsed_time");
 
-    var elapsed_time = res +"."+res1;
-    
-    //alert(res + "." +res1)
-    
-    
-    
-  }
-  
+  //alert(elapsed_time1);
+
+  /*	if(elapsed_time1 <= tim.slice(2, 5))
+		{
+
+	var res = tim.slice(2, 5);
+
+	var res1 = tim.slice(7, 9);
+
+	var elapsed_time = res +"."+res1;
+
+	//alert(res + "." +res1)
+
+
+
+		}
+
 	else if(elapsed_time1 <= tim.slice(2, 6) )
 	{
-    var res = tim.slice(2, 6);
-    
-    var res1 = tim.slice(8, 10);
-    
-    
-    var elapsed_time = res +"."+res1;
-    
-    //alert(res + "." +res1)
-    
-    
-    
+	var res = tim.slice(2, 6);
+
+	var res1 = tim.slice(8, 10);
+
+
+	var elapsed_time = res +"."+res1;
+
+	//alert(res + "." +res1)
+
+
+
 	}
-  
+
 	else if(elapsed_time1 < tim.slice(2, 4))
 	{
-    
-    var res = tim.slice(2, 4);
-    
-    
+
+		var res = tim.slice(2, 4);
+
+
 		var res1 = tim.slice(6, 8);
-    
+
 		//alert(res + "." +res1)
-    
+
 		
 		var elapsed_time = res +"."+res1;
 		
-    
-	}
-  */
- 
- var elapsed_time = localStorage.getItem("elapsed_time");
-  var question_id = localStorage.getItem("id1");
 
+	}
+*/
+
+  var question_id = localStorage.getItem("id1");
+alert(value)
   $.ajax({
     url:
       "https://toyota-lakshya-onlineassessment.in/api/submit_answer/?login_id=" +
@@ -721,8 +720,7 @@ function submitanswer() {
     data:"json",
     success: function(data){
       var status = data.status;
-      alert(value);
-      if (status === "success") {
+      if (status === "success" && value) {
         get_next_qn();
         alert(status);
         // Display an alert after successful submission
