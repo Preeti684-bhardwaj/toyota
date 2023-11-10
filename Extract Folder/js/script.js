@@ -808,6 +808,7 @@ function submitanswer() {
     .then((data) => {
       console.log(data);
       var status = data.status;
+      alert(value)
       if (status === "success" && value) {
         get_next_qn();
         console.log(status);
