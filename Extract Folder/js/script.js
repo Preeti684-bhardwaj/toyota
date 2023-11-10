@@ -1,5 +1,9 @@
 var executed = false;
 
+function alertSomething(){
+	alert("hii i am working")
+}
+
 function get_next_qn() {
   $("#overlay").fadeIn(300);
 
@@ -26,8 +30,6 @@ function get_next_qn() {
 
       var times = data.elapsed_time;
 
-      //console.log(times);
-
       localStorage.setItem("elapsed_time", times);
       if (!executed) {
         initCountdown(times);
@@ -35,9 +37,10 @@ function get_next_qn() {
       }
 
       var answered_questions = data.answered_questions;
+      console.log(answered_questions);
 
       var answered_questionss = data.answered_questions;
-
+      console.log(answered_questionss);
       var total_questions = data.total_questions;
 
       document.getElementById("inc").value =
@@ -99,108 +102,110 @@ function get_next_qn() {
 }
 
 // function submitanswer() {
-//   console.log("hii from submit answer function");
 //   $("#overlay").fadeIn(300);
-
+//   console.log("hii from submit answer");
 //   var lakshya_id = localStorage.getItem("lakshya_id");
 //   var assessment_id = localStorage.getItem("assessment_id");
 
-//   var elapsed_time = localStorage.getItem("elapsed_time");
+//   var demo_time = document.getElementById("demo").innerHTML;
+//   if (demo_time.length == "11") {
+//     var elapsed_time = demo_time.slice(2, 6);
+//   } else if (demo_time.length == "10") {
+//     var elapsed_time = demo_time.slice(2, 5);
+//   } else if (demo_time.length == "9") {
+//     var elapsed_time = demo_time.slice(2, 4);
+//   }
 
 //   var value;
-//     if (question_type == "single_choice") {
-//       if (choice_length == "4") {
-//         var ids1 = document.getElementById("myBtn1").value;
-//         var ids2 = document.getElementById("myBtn2").value;
-//         var ids3 = document.getElementById("myBtn3").value;
-//         var ids4 = document.getElementById("myBtn4").value;
 
-//         if (
-//           localStorage["key"] == ids1 ||
-//           localStorage["key"] == ids2 ||
-//           localStorage["key"] == ids3 ||
-//           localStorage["key"] == ids4
-//         ) {
-//           value = localStorage["key"];
-//           alert(value);
-//         }
-//         if (
-//           localStorage["key"] != ids1 &&
+//   if (question_type == "single_choice") {
+//     if (choice_length == "4") {
+//       var ids1 = document.getElementById("myBtn1").value;
+//       var ids2 = document.getElementById("myBtn2").value;
+//       var ids3 = document.getElementById("myBtn3").value;
+//       var ids4 = document.getElementById("myBtn4").value;
+
+//       if (
+//         localStorage["key"] == ids1 ||
+//         localStorage["key"] == ids2 ||
+//         localStorage["key"] == ids3 ||
+//         localStorage["key"] == ids4
+//       ) {
+//         var value = localStorage["key"];
+
+//         alert(value);
+//       }
+//       if (
+//         localStorage["key"] != ids1 &&
+//         localStorage["key"] != ids2 &&
+//         localStorage["key"] != ids3 &&
+//         localStorage["key"] != ids4
+//       ) {
+//         value = "";
+//       }
+//     } else if (choice_length == "5") {
+//       var ids1 = document.getElementById("myBtn1").value;
+//       var ids2 = document.getElementById("myBtn2").value;
+//       var ids3 = document.getElementById("myBtn3").value;
+//       var ids4 = document.getElementById("myBtn4").value;
+//       var ids5 = document.getElementById("myBtn5").value;
+
+//       if (
+//         localStorage["key"] == ids1 ||
+//         localStorage["key"] == ids2 ||
+//         localStorage["key"] == ids3 ||
+//         localStorage["key"] == ids4 ||
+//         localStorage["key"] == ids5
+//       ) {
+//         var value = localStorage["key"];
+
+//         alert(value);
+//       }
+//       if (
+//         (localStorage["key"] != ids1 &&
 //           localStorage["key"] != ids2 &&
 //           localStorage["key"] != ids3 &&
-//           localStorage["key"] != ids4
-//         ) {
-//           value = "";
-//         }
-//       } else if (choice_length == "5") {
-//         var ids1 = document.getElementById("myBtn1").value;
-//         var ids2 = document.getElementById("myBtn2").value;
-//         var ids3 = document.getElementById("myBtn3").value;
-//         var ids4 = document.getElementById("myBtn4").value;
-//         var ids5 = document.getElementById("myBtn5").value;
-
-//         if (
-//           localStorage["key"] == ids1 ||
-//           localStorage["key"] == ids2 ||
-//           localStorage["key"] == ids3 ||
-//           localStorage["key"] == ids4 ||
-//           localStorage["key"] == ids5
-//         ) {
-//           value = localStorage["key"];
-//           alert(value);
-//         }
-//         if (
-//           (localStorage["key"] != ids1 &&
-//             localStorage["key"] != ids2 &&
-//             localStorage["key"] != ids3 &&
-//             localStorage["key"] != ids4) &&
-//           localStorage["key"] !== ids5
-//         ) {
-//           value = "";
-//         }
-//       } else if (choice_length == "2") {
-//         var ids1 = document.getElementById("myBtn1").value;
-//         var ids2 = document.getElementById("myBtn2").value;
-
-//         if (localStorage["key"] == ids1 || localStorage["key"] == ids2) {
-//           value = localStorage["key"];
-//           alert(value);
-//         }
-//         if (localStorage["key"] != ids1 && localStorage["key"] != ids2) {
-//           value = "";
-//         }
-//       } else if (choice_length == "3") {
-//         var ids1 = document.getElementById("myBtn1").value;
-//         var ids2 = document.getElementById("myBtn2").value;
-//         var ids3 = document.getElementById("myBtn3").value;
-
-//         if (
-//           localStorage["key"] == ids1 ||
-//           localStorage["key"] == ids2 ||
-//           localStorage["key"] == ids3
-//         ) {
-//           value = localStorage["key"];
-//           alert(value);
-//         }
-//         if (
-//           localStorage["key"] != ids1 &&
-//           localStorage["key"] != ids2 &&
-//           localStorage["key"] != ids3
-//         ) {
-//           value = "";
-//         }
+//           localStorage["key"] != ids4) ||
+//         localStorage["key"] == ids5
+//       ) {
+//         value = "";
 //       }
+//     } else if (choice_length == "2") {
+//       var ids1 = document.getElementById("myBtn1").value;
+//       var ids2 = document.getElementById("myBtn2").value;
+
+//       if (localStorage["key"] == ids1 || localStorage["key"] == ids2) {
+//         var value = localStorage["key"];
+
+//         alert(value);
+//       }
+//       if (localStorage["key"] != ids1 && localStorage["key"] != ids2) {
+//         value = "";
+//       }
+//     } else if (choice_length == "3") {
+//       var ids1 = document.getElementById("myBtn1").value;
+//       var ids2 = document.getElementById("myBtn2").value;
+//       var ids3 = document.getElementById("myBtn3").value;
+
+//       if (
+//         localStorage["key"] == ids1 ||
+//         localStorage["key"] == ids2 ||
+//         localStorage["key"] == ids3
+//       ) {
+//         var value = localStorage.getItem("key");
+//       }
+//       if (
+//         localStorage["key"] != ids1 &&
+//         localStorage["key"] != ids2 &&
+//         localStorage["key"] != ids3
+//       ) {
+//         value = "";
+//       }
+//     }
 //   } else if (question_type == "descriptive") {
 //     var value = document.getElementById("descriptionn").value;
 //   } else if (question_type == "image_descriptive") {
-//     var value =
-//       document.getElementById("imgdesc1").value +
-//       "" +
-//       document.getElementById("imgdesc2").value +
-//       "" +
-//       document.getElementById("imgdesc3").value +
-//       "" +
-//       document.getElementById("imgdesc4").value;
+//     var value = document.getElementById("descriptionn1").value;
 //   } else if (question_type == "multiple_choice") {
 //     if (choice_length == "4") {
 //       var value1 = document
@@ -650,8 +655,6 @@ function get_next_qn() {
 
 //   //alert(tim[2]+""+tim[3]);
 
-//   var elapsed_time = localStorage.getItem("elapsed_time");
-
 //   //alert(elapsed_time1);
 
 //   /*	if(elapsed_time1 <= tim.slice(2, 5))
@@ -702,40 +705,76 @@ function get_next_qn() {
 // */
 
 //   var question_id = localStorage.getItem("id1");
-// alert(value)
-//   $.ajax({
-//     url:
-//       "https://toyota-lakshya-onlineassessment.in/api/submit_answer/?login_id=" +
-//       lakshya_id +
-//       "&assessment_id=" +
-//       assessment_id +
-//       "&question_id=" +
-//       question_id +
-//       "&elapsed_time=" +
-//       elapsed_time +
-//       "&answer=" +
-//       value +
-//       "",
-//     type: "GET",
-//     data:"json",
-//     success: function(data){
+//   console.log(value);
+
+//   // $.ajax({
+//   //   url:
+//   //     "https://toyota-lakshya-onlineassessment.in/api/submit_answer/?login_id=" +
+//   //     lakshya_id +
+//   //     "&assessment_id=" +
+//   //     assessment_id +
+//   //     "&question_id=" +
+//   //     question_id +
+//   //     "&elapsed_time=" +
+//   //     elapsed_time +
+//   //     "&answer="+value+"",
+//   //   type: "GET",
+//   //   dataType: "json",
+//   //   success: function (data) {
+//   //     console.log(data);
+//   //     var status = data.status;
+//   //     if (status == "success" && value) {
+//   //       get_next_qn();
+//   //       console.log(status);
+//   //       $("#overlay").fadeIn(300);
+//   //     } else {
+// 	// 	value=value+"data"
+//   //       alert("Error",value);
+//   //       console.log("error");
+//   //     }
+//   //   },
+//   // }).done(function () {
+//   //   setTimeout(function () {
+//   //     $("#overlay").fadeOut(300);
+//   //   }, 300);
+//   // });
+//   var url =
+//     "https://toyota-lakshya-onlineassessment.in/api/submit_answer/?" +
+//     "login_id=" +
+//     lakshya_id +
+//     "&assessment_id=" +
+//     assessment_id +
+//     "&question_id=" +
+//     question_id +
+//     "&elapsed_time=" +
+//     elapsed_time +
+//     "&answer=" +
+//     value;
+
+//   // Using the Fetch API
+//   fetch(url)
+//     .then((response) => response.json())
+//     .then((data) => {
+//       console.log(data);
 //       var status = data.status;
-//       alert(value);
-//       console.log(data)
-//       if (status === "success") {
+//       if (status === "success" && value) {
 //         get_next_qn();
-//         alert(status);
-//         // Display an alert after successful submission
-//         alert("Answer submitted successfully!");
+//         console.log(status);
+//         $("#overlay").fadeIn(300);
 //       } else {
-//         alert("can't do it");
+//         value = value + "data";
+//         console.error("Error", value);
+//         console.log("error");
 //       }
-//     },
-//   }).done(function () {
-//     setTimeout(function () {
-//       $("#overlay").fadeOut(300);
-//     }, 300);
-//   });
+//     })
+//     .catch((error) => {
+//       console.error("Fetch error:", error);
+//     })
+//     .finally(() => {
+//       setTimeout(() => {
+//         $("#overlay").fadeOut(300);
+//       }, 300);
+//     });
 // }
 
 function submitanswer() {
@@ -808,7 +847,6 @@ function submitanswer() {
     .then((data) => {
       console.log(data);
       var status = data.status;
-      alert(value)
       if (status === "success" && value) {
         get_next_qn();
         console.log(status);
@@ -832,38 +870,57 @@ function submitanswer() {
 
 function question1(data) {
   var obj = data.question;
+  var qnimage = obj.qn_image;
 
   if (obj.choice.length == "4") {
     var page1 =
       '<div class="col-sm-4">' +
-      '<h2 style="text-align: center;font-family:calibri bold;color:#545454;width: 70%;border-bottom: 2px solid red;" >Assesment</h2>' +
+      '<h2 style="text-align: center;color:#545454;width:100%;border-bottom: 2px solid red;" >Assesment</h2>' +
       " </div><br>" +
       '<div class="col-sm-12">' +
-      '<h6 style="font-family: calibri regular;color: #444444;font-size:20px;">cate1</h6>' +
-      "</div><br>" +
+      "<h6 style=\"font-family:'Noto Sans', sans-serif;color: #444444;font-size:17px;line-height:21px;letter-spacing:1.36px;font-weight:400;\">cate1</h6>" +
+      "</div>" +
+      '<div class="col-sm-12">' +
+      '<button type="button" style="padding:8px 20px;margin:8px 0px 10px;" class="btn btn-info" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-picture"></span> View Image </button>' +
+      "</div>" +
       '<div class="col-sm-12">' +
       '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn1" value="id1" onclick=" myFunction1()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:#444444;font-family: calibri regular;font-size:16px">answers<li>' +
+      '<li style="text-align: left;"><input type="radio" name="age" id="myBtn1" value="id1" onclick=" myFunction1()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:#444444;font-size:14px"> answers <li>' +
       '<li style="display:none">id1</li>' +
       "</ul>" +
       "</div>" +
       '<div class="col-sm-12">' +
       '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn2" value="id2" onclick=" myFunction2()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:16px;font-family: calibri regular" hspace="20">answers1<li>' +
+      '<li style="text-align: left;" ><input type="radio" name="age" id="myBtn2" value="id2" onclick=" myFunction2()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:14px;" hspace="15">answers1<li>' +
       '<li style="display:none">id2</li>' +
       "</ul>" +
       "</div>" +
       '<div class="col-sm-12">' +
       '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn3" value="id3"onclick=" myFunction3()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:16px;font-family: calibri regular">answers2<li>' +
+      '<li style="text-align: left;"><input type="radio" name="age" id="myBtn3" value="id3"onclick=" myFunction3()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:14px;">answers2<li>' +
       '<li style="display:none">id3</li>' +
       "</ul>" +
       "</div>" +
       '<div class="col-sm-12">' +
       '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn4" value="id4" onclick=" myFunction4()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b id="data" style="color:444444;font-size:16px;font-family: calibri regular">answers3<li>' +
+      '<li style="text-align: left;"><input type="radio" name="age" id="myBtn4" value="id4" onclick=" myFunction4()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b id="data" style="color:444444;font-size:14px;">answers3<li>' +
       '<li style="display:none">id4</li>' +
       "</ul>" +
+      "</div>" +
+      '<div class="modal fade" id="myModal" role="dialog">' +
+      '<div class="modal-dialog">' +
+      '<div class="modal-content">' +
+      '<div class="modal-header">' +
+      '<button type="button" class="close" data-dismiss="modal" > <b>&times;</b></button></div>' +
+      '<div class="modal-body">' +
+      '<div class="row content">' +
+      '<div class="col-sm-12" style="width: 100%;height:60vh;">' +
+      '<img src="pathtoimg" style="width:100%; height:100%; object-fit: contain; object-position: center; display: block; margin: 0 auto;">' +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
       "</div>" +
       "</div></div>";
 
@@ -891,6 +948,19 @@ function question1(data) {
     ele = ele.replace("Assesment", "Single Choice");
     ele = ele.replace("cate1", cate1);
 
+    if (obj.qn_image && obj.qn_image !== "") {
+      ele = ele.replace(
+        "pathtoimg",
+        "https://toyota-lakshya-onlineassessment.in" + obj.qn_image
+      );
+    } else {
+      // If qnimage is null or empty, hide the image
+      ele = ele.replace(
+        '<button type="button" style="padding:8px 20px;margin:8px 0px 10px;" class="btn btn-info" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-picture"></span> View Image </button>',
+        ""
+      );
+    }
+
     ele = ele.replace("answers", qesn);
     ele = ele.replace("answers1", qesn1);
     ele = ele.replace("answers2", qesn2);
@@ -907,28 +977,46 @@ function question1(data) {
   } else if (obj.choice.length == "3") {
     var page1 =
       '<div class="col-sm-4">' +
-      '<h2 style="text-align: center;font-family:calibri bold;color:#545454;width: 70%;border-bottom: 2px solid red;" >Assesment</h2>' +
+      '<h2 style="text-align: center;color:#545454;width:100%;border-bottom: 2px solid red;" >Assesment</h2>' +
       " </div><br>" +
       '<div class="col-sm-12">' +
-      '<h6 style="font-family: calibri regular;color: #444444;font-size:20px;">cate1</h6>' +
-      "</div><br>" +
+      "<h6 style=\"font-family:'Noto Sans', sans-serif;color: #444444;font-size:17px;line-height:21px;letter-spacing:1.36px;font-weight:400;\">cate1</h6>" +
+      "</div>" +
+      '<div class="col-sm-12">' +
+      '<button type="button" style="padding:8px 20px;margin:8px 0px 10px;" class="btn btn-info" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-picture"></span> View Image </button>' +
+      "</div>" +
       '<div class="col-sm-12">' +
       '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn1" value="id1" onclick=" myFunction1()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:#444444;font-family: calibri regular;font-size:16px">answers<li>' +
+      '<li><input type="radio" name="age" id="myBtn1" value="id1" onclick=" myFunction1()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:#444444;font-size:14px">answers<li>' +
       '<li style="display:none">id1</li>' +
       "</ul>" +
       "</div>" +
       '<div class="col-sm-12">' +
       '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn2" value="id2" onclick=" myFunction2()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:16px;font-family: calibri regular" hspace="20">answers1<li>' +
+      '<li><input type="radio" name="age" id="myBtn2" value="id2" onclick=" myFunction2()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:14px;" hspace="15">answers1<li>' +
       '<li style="display:none">id2</li>' +
       "</ul>" +
       "</div>" +
       '<div class="col-sm-12">' +
       '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn3" value="id3"onclick=" myFunction3()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:16px;font-family: calibri regular">answers2<li>' +
+      '<li><input type="radio" name="age" id="myBtn3" value="id3"onclick=" myFunction3()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:14px;">answers2<li>' +
       '<li style="display:none">id3</li>' +
       "</ul>" +
+      "</div>" +
+      '<div class="modal fade" id="myModal" role="dialog">' +
+      '<div class="modal-dialog">' +
+      '<div class="modal-content">' +
+      '<div class="modal-header">' +
+      '<button type="button" class="close" data-dismiss="modal"> <b> &times; </b></button></div>' +
+      '<div class="modal-body">' +
+      '<div class="row content">' +
+      '<div class="col-sm-12" style="width: 100%;height:60vh;">' +
+      '<img src="pathtoimg" style="width:100%; height:100%; object-fit: contain; object-position: center; display: block; margin: 0 auto;">' +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
       "</div>" +
       "</div></div>";
 
@@ -951,6 +1039,19 @@ function question1(data) {
     var id2 = obj.choice[1].id;
     var id3 = obj.choice[2].id;
 
+    if (obj.qn_image && obj.qn_image !== "") {
+      ele = ele.replace(
+        "pathtoimg",
+        "https://toyota-lakshya-onlineassessment.in" + obj.qn_image
+      );
+    } else {
+      // If qnimage is null or empty, hide the image
+      ele = ele.replace(
+        '<button type="button" style="padding:8px 20px;margin:8px 0px 10px;" class="btn btn-info" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-picture"></span> View Image </button>',
+        ""
+      );
+    }
+
     ele = ele.replace("Assesment", "Single Choice");
     ele = ele.replace("cate1", cate1);
 
@@ -968,22 +1069,40 @@ function question1(data) {
   } else if (obj.choice.length == "2") {
     var page1 =
       '<div class="col-sm-4">' +
-      '<h2 style="text-align: center;font-family:calibri bold;color:#545454;width: 70%;border-bottom: 2px solid red;" >Assesment</h2>' +
+      '<h2 style="text-align:center;color:#545454;width:100%;border-bottom: 2px solid red;" >Assesment</h2>' +
       " </div><br>" +
       '<div class="col-sm-12">' +
-      '<h6 style="font-family: calibri regular;color: #444444;font-size:20px;">cate1</h6>' +
-      "</div><br>" +
+      "<h6 style=\"font-family:'Noto Sans', sans-serif;color: #444444;font-size:17px;line-height:21px;letter-spacing:1.36px;font-weight:400;\">cate1</h6>" +
+      "</div>" +
+      '<div class="col-sm-12">' +
+      '<button type="button" style="padding:8px 20px;margin:8px 0px 10px;" class="btn btn-info" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-picture"></span> View Image </button>' +
+      "</div>" +
       '<div class="col-sm-12">' +
       '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn1" value="id1" onclick=" myFunction1()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:#444444;font-family: calibri regular;font-size:16px">answers<li>' +
+      '<li><input type="radio" name="age" id="myBtn1" value="id1" onclick=" myFunction1()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:#444444;font-size:14px">answers<li>' +
       '<li style="display:none">id1</li>' +
       "</ul>" +
       "</div>" +
       '<div class="col-sm-12">' +
       '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn2" value="id2" onclick=" myFunction2()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:16px;font-family: calibri regular" hspace="20">answers1<li>' +
+      '<li><input type="radio" name="age" id="myBtn2" value="id2" onclick=" myFunction2()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:14px;" hspace="15">answers1<li>' +
       '<li style="display:none">id2</li>' +
       "</ul>" +
+      "</div>" +
+      '<div class="modal fade" id="myModal" role="dialog">' +
+      '<div class="modal-dialog">' +
+      '<div class="modal-content">' +
+      '<div class="modal-header">' +
+      '<button type="button" class="close" data-dismiss="modal" > <b> &times; </b> </button></div>' +
+      '<div class="modal-body">' +
+      '<div class="row content">' +
+      '<div class="col-sm-12" style="width: 100%;height:60vh;">' +
+      '<img src="pathtoimg" style="width:100%; height:100%; object-fit: contain; object-position: center; display: block; margin: 0 auto;">' +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
       "</div>" +
       "</div></div>";
 
@@ -1004,6 +1123,19 @@ function question1(data) {
     var id1 = obj.choice[0].id;
     var id2 = obj.choice[1].id;
 
+    if (obj.qn_image && obj.qn_image !== "") {
+      ele = ele.replace(
+        "pathtoimg",
+        "https://toyota-lakshya-onlineassessment.in" + obj.qn_image
+      );
+    } else {
+      // If qnimage is null or empty, hide the image
+      ele = ele.replace(
+        '<button type="button" style="padding:8px 20px;margin:8px 0px 10px;" class="btn btn-info" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-picture"></span> View Image </button>',
+        ""
+      );
+    }
+
     ele = ele.replace("Assesment", "Single Choice");
     ele = ele.replace("cate1", cate1);
 
@@ -1019,40 +1151,58 @@ function question1(data) {
   } else if (obj.choice.length == "5") {
     var page1 =
       '<div class="col-sm-4">' +
-      '<h2 style="text-align: center;font-family:calibri bold;color:#545454;width: 70%;border-bottom: 2px solid red;" >Assesment</h2>' +
+      '<h2 style="text-align: center;color:#545454;width:100%;border-bottom: 2px solid red;" >Assesment</h2>' +
       " </div><br>" +
       '<div class="col-sm-12">' +
-      '<h6 style="font-family: calibri regular;color: #444444;font-size:20px;">cate1</h6>' +
-      "</div><br>" +
+      "<h6 style=\"font-family:'Noto Sans', sans-serif;color: #444444;font-size:17px;line-height:21px;letter-spacing:1.36px;font-weight:400;\">cate1</h6>" +
+      "</div>" +
+      '<div class="col-sm-12">' +
+      '<button type="button" style="padding:8px 20px;margin:8px 0px 10px;" class="btn btn-info" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-picture"></span> View Image </button>' +
+      "</div>" +
       '<div class="col-sm-12">' +
       '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn1" value="id1" onclick=" myFunction1()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:#444444;font-family: calibri regular;font-size:16px">answers<li>' +
+      '<li><input type="radio" name="age" id="myBtn1" value="id1" onclick=" myFunction1()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:#444444;font-size:14px">answers<li>' +
       '<li style="display:none">id1</li>' +
       "</ul>" +
       "</div>" +
       '<div class="col-sm-12">' +
       '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn2" value="id2" onclick=" myFunction2()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:16px;font-family: calibri regular" hspace="20">answers1<li>' +
+      '<li><input type="radio" name="age" id="myBtn2" value="id2" onclick=" myFunction2()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:14px;" hspace="15">answers1<li>' +
       '<li style="display:none">id2</li>' +
       "</ul>" +
       "</div>" +
       '<div class="col-sm-12">' +
       '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn3" value="id3"onclick=" myFunction3()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:16px;font-family: calibri regular">answers2<li>' +
+      '<li><input type="radio" name="age" id="myBtn3" value="id3"onclick=" myFunction3()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b style="color:444444;font-size:14px;">answers2<li>' +
       '<li style="display:none">id3</li>' +
       "</ul>" +
       "</div>" +
       '<div class="col-sm-12">' +
       '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn4" value="id4" onclick=" myFunction4()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b id="data" style="color:444444;font-size:16px;font-family: calibri regular">answers3<li>' +
+      '<li><input type="radio" name="age" id="myBtn4" value="id4" onclick=" myFunction4()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b id="data" style="color:444444;font-size:14px;">answers3<li>' +
       '<li style="display:none">id4</li>' +
       "</ul>" +
       "</div>" +
       '<div class="col-sm-12">' +
       '<ul class="list-group" style="list-style-type: none">' +
-      '<li><input type="radio" name="age" id="myBtn5" value="id5" onclick=" myFunction5()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b id="data" style="color:444444;font-size:16px;font-family: calibri regular">answers4<li>' +
+      '<li><input type="radio" name="age" id="myBtn5" value="id5" onclick=" myFunction5()" class="btn btn-default" style="border : 1px solid red;width:25px;height:25px;margin-bottom : 1%;outline: none">&nbsp&nbsp&nbsp<b id="data" style="color:444444;font-size:14px;">answers4<li>' +
       '<li style="display:none">id5</li>' +
       "</ul>" +
+      "</div>" +
+      '<div class="modal fade" id="myModal" role="dialog">' +
+      '<div class="modal-dialog">' +
+      '<div class="modal-content">' +
+      '<div class="modal-header">' +
+      '<button type="button" class="close" data-dismiss="modal"> <b> &times; </b> </button></div>' +
+      '<div class="modal-body">' +
+      '<div class="row content">' +
+      '<div class="col-sm-12" style="width: 100%;height:60vh;">' +
+      '<img src="pathtoimg" style="width:100%; height:100%; object-fit: contain; object-position: center; display: block; margin: 0 auto;">' +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
       "</div>" +
       "</div></div>";
 
@@ -1079,6 +1229,19 @@ function question1(data) {
     var id4 = obj.choice[3].id;
     var id5 = obj.choice[4].id;
 
+    if (obj.qn_image && obj.qn_image !== "") {
+      ele = ele.replace(
+        "pathtoimg",
+        "https://toyota-lakshya-onlineassessment.in" + obj.qn_image
+      );
+    } else {
+      // If qnimage is null or empty, hide the image
+      ele = ele.replace(
+        '<button type="button" style="padding:8px 20px;margin:8px 0px 10px;" class="btn btn-info" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-picture"></span> View Image </button>',
+        ""
+      );
+    }
+
     ele = ele.replace("Assesment", "Single Choice");
     ele = ele.replace("cate1", cate1);
 
@@ -1102,29 +1265,27 @@ function question1(data) {
 
 function myFunction1() {
   var x = document.getElementById("myBtn1").value;
-  localStorage.setItem("key", x);
-
+  localStorage["key"] = x;
 }
 
 function myFunction2() {
   var x = document.getElementById("myBtn2").value;
-  localStorage.setItem("key", x);
-
+  localStorage["key"] = x;
 }
 function myFunction3() {
   var x = document.getElementById("myBtn3").value;
-  localStorage.setItem("key", x);
 
+  localStorage["key"] = x;
 }
 function myFunction4() {
   var x = document.getElementById("myBtn4").value;
-  localStorage.setItem("key", x);
 
+  localStorage["key"] = x;
 }
 function myFunction5() {
   var x = document.getElementById("myBtn5").value;
-  localStorage.setItem("key", x);
 
+  localStorage["key"] = x;
 }
 
 function question2(data) {
@@ -1296,10 +1457,9 @@ function question3(data) {
     '<h6 style="font-family: calibri regular;color: #545454;font-size:20px;border-left=5px solid red">cate1</h6>' +
     "</div><br>" +
     '<div class="col-sm-12">' +
-    '<img src="image2" style="width: 250px;height: 200px;float:left">' +
-    '<div class="column" style="padding-left: 50px;padding-top: 40px">' +
-    '<span class="a"><input type="text"placeholder="" id="imgdesc1" style="width: 40px;padding-right: 5px"></span> <span class="a"><input type="text"placeholder="" id="imgdesc2" style="width: 40px;padding-right: 5px"></span> <span class="a"><input type="text"placeholder="" id="imgdesc3" style="width: 40px;"></span> <span class="a"><input type="text" id="imgdesc4" placeholder="" style="width: 40px;"></span>' +
-    "</div></div>";
+    '<img src="image2" style="width: 200px;height: 200px;float:left">' +
+    '<textarea rows="8" cols="70" style="margin-left:20px;margin-top:20px" id="descriptionn1"  placeholder=" Write your Answer Here..."></textarea>' +
+    "</div>";
 
   var url = "https://toyota-lakshya-onlineassessment.in";
 
@@ -1679,7 +1839,7 @@ function myCallback() {
     var speedKbps = (speedBps / 1024).toFixed(2);
     var speedMbps = (speedKbps / 1024).toFixed(2);
 
-    if (speedMbps > 2) {
+    if (speedMbps > 1) {
       //console.log(speedMbps);
       ShowProgressMessage([
         //document.getElementById("abcde").src=imageees[1]
@@ -1698,6 +1858,8 @@ function myCallback() {
       //document.getElementById("abcde").src=imageees[2]
 
       ("Bad");
+    } else if (speedMbps < 0.05) {
+      alert("Slow Internet Detected");
     }
   }
 }
