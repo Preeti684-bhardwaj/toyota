@@ -1010,24 +1010,27 @@ function question1(data) {
 
 function myFunction1() {
   var x = document.getElementById("myBtn1").value;
-  localStorage.setItem("key", x);
+  localStorage["key"] = x;
 }
 
 function myFunction2() {
   var x = document.getElementById("myBtn2").value;
-  localStorage.setItem("key", x);
+  localStorage["key"] = x;
 }
 function myFunction3() {
   var x = document.getElementById("myBtn3").value;
-  localStorage.setItem("key", x);
+
+  localStorage["key"] = x;
 }
 function myFunction4() {
   var x = document.getElementById("myBtn4").value;
-  localStorage.setItem("key", x);
+
+  localStorage["key"] = x;
 }
 function myFunction5() {
   var x = document.getElementById("myBtn5").value;
-  localStorage.setItem("key", x);
+
+  localStorage["key"] = x;
 }
 
 function question2(data) {

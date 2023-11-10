@@ -131,7 +131,7 @@ function submitanswer() {
         localStorage["key"] == ids3 ||
         localStorage["key"] == ids4
       ) {
-        value = localStorage["key"];
+        var value = localStorage.getItem("key");
         alert(value);
       }
       if (
@@ -156,7 +156,7 @@ function submitanswer() {
         localStorage["key"] == ids4 ||
         localStorage["key"] == ids5
       ) {
-        value = localStorage["key"];
+        var value = localStorage.getItem("key");
         alert(value);
       }
       if (
@@ -173,7 +173,7 @@ function submitanswer() {
       var ids2 = document.getElementById("myBtn2").value;
 
       if (localStorage["key"] == ids1 || localStorage["key"] == ids2) {
-        value = localStorage["key"];
+        var value = localStorage.getItem("key");
         alert(value);
       }
       if (localStorage["key"] != ids1 && localStorage["key"] != ids2) {
@@ -189,7 +189,7 @@ function submitanswer() {
         localStorage["key"] == ids2 ||
         localStorage["key"] == ids3
       ) {
-        value = localStorage["key"];
+        var value = localStorage.getItem("key");
       }
       if (
         localStorage["key"] != ids1 &&
