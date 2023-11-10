@@ -704,37 +704,74 @@ function submitanswer() {
   var question_id = localStorage.getItem("id1");
   console.log(value);
 
-  $.ajax({
-    url:
-      "https://toyota-lakshya-onlineassessment.in/api/submit_answer/?login_id=" +
-      lakshya_id +
-      "&assessment_id=" +
-      assessment_id +
-      "&question_id=" +
-      question_id +
-      "&elapsed_time=" +
-      elapsed_time +
-      "&answer="+value+"",
-    type: "GET",
-    dataType: "json",
-    success: function (data) {
+  // $.ajax({
+  //   url:
+  //     "https://toyota-lakshya-onlineassessment.in/api/submit_answer/?login_id=" +
+  //     lakshya_id +
+  //     "&assessment_id=" +
+  //     assessment_id +
+  //     "&question_id=" +
+  //     question_id +
+  //     "&elapsed_time=" +
+  //     elapsed_time +
+  //     "&answer="+value+"",
+  //   type: "GET",
+  //   dataType: "json",
+  //   success: function (data) {
+  //     console.log(data);
+  //     var status = data.status;
+  //     if (status == "success" && value) {
+  //       get_next_qn();
+  //       console.log(status);
+  //       $("#overlay").fadeIn(300);
+  //     } else {
+	// 	value=value+"data"
+  //       alert("Error",value);
+  //       console.log("error");
+  //     }
+  //   },
+  // }).done(function () {
+  //   setTimeout(function () {
+  //     $("#overlay").fadeOut(300);
+  //   }, 300);
+  // });
+  var url =
+    "https://toyota-lakshya-onlineassessment.in/api/submit_answer/?" +
+    "login_id=" +
+    lakshya_id +
+    "&assessment_id=" +
+    assessment_id +
+    "&question_id=" +
+    question_id +
+    "&elapsed_time=" +
+    elapsed_time +
+    "&answer=" +
+    value;
+
+  // Using the Fetch API
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
       console.log(data);
       var status = data.status;
-      if (status == "success" && value) {
+      if (status === "success" && value) {
         get_next_qn();
         console.log(status);
         $("#overlay").fadeIn(300);
       } else {
-		value=value+"data"
-        alert("Error",value);
+        value = value + "data";
+        console.error("Error", value);
         console.log("error");
       }
-    },
-  }).done(function () {
-    setTimeout(function () {
-      $("#overlay").fadeOut(300);
-    }, 300);
-  });
+    })
+    .catch((error) => {
+      console.error("Fetch error:", error);
+    })
+    .finally(() => {
+      setTimeout(() => {
+        $("#overlay").fadeOut(300);
+      }, 300);
+    });
 }
 
 function question1(data) {
