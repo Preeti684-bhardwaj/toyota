@@ -131,7 +131,8 @@ function submitanswer() {
         localStorage["key"] == ids3 ||
         localStorage["key"] == ids4
       ) {
-        var value = localStorage.getItem("key");
+        var value = localStorage["key"];
+
         alert(value);
       }
       if (
@@ -156,7 +157,8 @@ function submitanswer() {
         localStorage["key"] == ids4 ||
         localStorage["key"] == ids5
       ) {
-        var value = localStorage.getItem("key");
+        var value = localStorage["key"];
+
         alert(value);
       }
       if (
@@ -173,7 +175,8 @@ function submitanswer() {
       var ids2 = document.getElementById("myBtn2").value;
 
       if (localStorage["key"] == ids1 || localStorage["key"] == ids2) {
-        var value = localStorage.getItem("key");
+        var value = localStorage["key"];
+
         alert(value);
       }
       if (localStorage["key"] != ids1 && localStorage["key"] != ids2) {
