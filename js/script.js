@@ -101,6 +101,682 @@ function get_next_qn() {
   });
 }
 
+// function submitanswer() {
+//   $("#overlay").fadeIn(300);
+//   console.log("hii from submit answer");
+//   var lakshya_id = localStorage.getItem("lakshya_id");
+//   var assessment_id = localStorage.getItem("assessment_id");
+
+//   var demo_time = document.getElementById("demo").innerHTML;
+//   if (demo_time.length == "11") {
+//     var elapsed_time = demo_time.slice(2, 6);
+//   } else if (demo_time.length == "10") {
+//     var elapsed_time = demo_time.slice(2, 5);
+//   } else if (demo_time.length == "9") {
+//     var elapsed_time = demo_time.slice(2, 4);
+//   }
+
+//   var value;
+
+//   if (question_type == "single_choice") {
+//     if (choice_length == "4") {
+//       var ids1 = document.getElementById("myBtn1").value;
+//       var ids2 = document.getElementById("myBtn2").value;
+//       var ids3 = document.getElementById("myBtn3").value;
+//       var ids4 = document.getElementById("myBtn4").value;
+
+//       if (
+//         localStorage["key"] == ids1 ||
+//         localStorage["key"] == ids2 ||
+//         localStorage["key"] == ids3 ||
+//         localStorage["key"] == ids4
+//       ) {
+//         var value = localStorage["key"];
+
+//         alert(value);
+//       }
+//       if (
+//         localStorage["key"] != ids1 &&
+//         localStorage["key"] != ids2 &&
+//         localStorage["key"] != ids3 &&
+//         localStorage["key"] != ids4
+//       ) {
+//         value = "";
+//       }
+//     } else if (choice_length == "5") {
+//       var ids1 = document.getElementById("myBtn1").value;
+//       var ids2 = document.getElementById("myBtn2").value;
+//       var ids3 = document.getElementById("myBtn3").value;
+//       var ids4 = document.getElementById("myBtn4").value;
+//       var ids5 = document.getElementById("myBtn5").value;
+
+//       if (
+//         localStorage["key"] == ids1 ||
+//         localStorage["key"] == ids2 ||
+//         localStorage["key"] == ids3 ||
+//         localStorage["key"] == ids4 ||
+//         localStorage["key"] == ids5
+//       ) {
+//         var value = localStorage["key"];
+
+//         alert(value);
+//       }
+//       if (
+//         (localStorage["key"] != ids1 &&
+//           localStorage["key"] != ids2 &&
+//           localStorage["key"] != ids3 &&
+//           localStorage["key"] != ids4) ||
+//         localStorage["key"] == ids5
+//       ) {
+//         value = "";
+//       }
+//     } else if (choice_length == "2") {
+//       var ids1 = document.getElementById("myBtn1").value;
+//       var ids2 = document.getElementById("myBtn2").value;
+
+//       if (localStorage["key"] == ids1 || localStorage["key"] == ids2) {
+//         var value = localStorage["key"];
+
+//         alert(value);
+//       }
+//       if (localStorage["key"] != ids1 && localStorage["key"] != ids2) {
+//         value = "";
+//       }
+//     } else if (choice_length == "3") {
+//       var ids1 = document.getElementById("myBtn1").value;
+//       var ids2 = document.getElementById("myBtn2").value;
+//       var ids3 = document.getElementById("myBtn3").value;
+
+//       if (
+//         localStorage["key"] == ids1 ||
+//         localStorage["key"] == ids2 ||
+//         localStorage["key"] == ids3
+//       ) {
+//         var value = localStorage.getItem("key");
+//       }
+//       if (
+//         localStorage["key"] != ids1 &&
+//         localStorage["key"] != ids2 &&
+//         localStorage["key"] != ids3
+//       ) {
+//         value = "";
+//       }
+//     }
+//   } else if (question_type == "descriptive") {
+//     var value = document.getElementById("descriptionn").value;
+//   } else if (question_type == "image_descriptive") {
+//     var value = document.getElementById("descriptionn1").value;
+//   } else if (question_type == "multiple_choice") {
+//     if (choice_length == "4") {
+//       var value1 = document
+//         .getElementById("repoFolder1")
+//         .getAttribute("data-value1");
+//       var value2 = document
+//         .getElementById("repoFolder2")
+//         .getAttribute("data-value2");
+//       var value3 = document
+//         .getElementById("repoFolder3")
+//         .getAttribute("data-value3");
+//       var value4 = document
+//         .getElementById("repoFolder4")
+//         .getAttribute("data-value4");
+
+//       var vals = "";
+
+//       if (document.getElementById("repoFolder1").checked) {
+//         value = value1;
+//         //alert(value);
+//       }
+//       if (document.getElementById("repoFolder2").checked) {
+//         value = value2;
+//         //alert(value);
+//       }
+//       if (document.getElementById("repoFolder3").checked) {
+//         value = value3;
+//         //alert(value);
+//       }
+//       if (document.getElementById("repoFolder4").checked) {
+//         value = value4;
+//         //alert(value);
+//       }
+//       if (
+//         document.getElementById("repoFolder1").checked &&
+//         document.getElementById("repoFolder2").checked
+//       ) {
+//         value = value1 + "," + value2;
+//       }
+//       if (
+//         document.getElementById("repoFolder2").checked &&
+//         document.getElementById("repoFolder3").checked
+//       ) {
+//         value = value2 + "," + value3;
+//       }
+//       if (
+//         document.getElementById("repoFolder3").checked &&
+//         document.getElementById("repoFolder4").checked
+//       ) {
+//         value = value3 + "," + value4;
+//       }
+//       if (
+//         document.getElementById("repoFolder1").checked &&
+//         document.getElementById("repoFolder4").checked
+//       ) {
+//         value = value1 + "," + value4;
+//       }
+//       if (
+//         document.getElementById("repoFolder1").checked &&
+//         document.getElementById("repoFolder2").checked &&
+//         document.getElementById("repoFolder3").checked
+//       ) {
+//         value = value1 + "," + value2 + "," + value3;
+//       }
+//       if (
+//         document.getElementById("repoFolder2").checked &&
+//         document.getElementById("repoFolder3").checked &&
+//         document.getElementById("repoFolder4").checked
+//       ) {
+//         value = value2 + "," + value3 + "," + value4;
+//       }
+//       if (
+//         document.getElementById("repoFolder3").checked &&
+//         document.getElementById("repoFolder4").checked &&
+//         document.getElementById("repoFolder1").checked
+//       ) {
+//         value = value3 + "," + value4 + "," + value1;
+//       }
+//       if (
+//         document.getElementById("repoFolder1").checked &&
+//         document.getElementById("repoFolder2").checked &&
+//         document.getElementById("repoFolder4").checked
+//       ) {
+//         value = value1 + "," + value2 + "," + value4;
+//       }
+//       if (
+//         document.getElementById("repoFolder1").checked &&
+//         document.getElementById("repoFolder2").checked &&
+//         document.getElementById("repoFolder3").checked &&
+//         document.getElementById("repoFolder4").checked
+//       ) {
+//         value = value1 + "," + value2 + "," + value3 + "," + value4;
+//       }
+//       if (
+//         document.getElementById("repoFolder1").checked == 0 &&
+//         document.getElementById("repoFolder2").checked == 0 &&
+//         document.getElementById("repoFolder3").checked == 0 &&
+//         document.getElementById("repoFolder4").checked == 0
+//       ) {
+//         value = "";
+//       }
+//     } else if (choice_length == "3") {
+//       var value1 = document
+//         .getElementById("repoFolder1")
+//         .getAttribute("data-value1");
+//       var value2 = document
+//         .getElementById("repoFolder2")
+//         .getAttribute("data-value2");
+//       var value3 = document
+//         .getElementById("repoFolder3")
+//         .getAttribute("data-value3");
+
+//       var vals = "";
+
+//       if (document.getElementById("repoFolder1").checked) {
+//         value = value1;
+//         //alert(value);
+//       }
+//       if (document.getElementById("repoFolder2").checked) {
+//         value = value2;
+//         //alert(value);
+//       }
+//       if (document.getElementById("repoFolder3").checked) {
+//         value = value3;
+//         //alert(value);
+//       }
+
+//       if (
+//         document.getElementById("repoFolder1").checked &&
+//         document.getElementById("repoFolder2").checked
+//       ) {
+//         value = value1 + "," + value2;
+//       }
+//       if (
+//         document.getElementById("repoFolder2").checked &&
+//         document.getElementById("repoFolder3").checked
+//       ) {
+//         value = value2 + "," + value3;
+//       }
+
+//       if (
+//         document.getElementById("repoFolder1").checked &&
+//         document.getElementById("repoFolder3").checked
+//       ) {
+//         value = value1 + "," + value3;
+//       }
+//       if (
+//         document.getElementById("repoFolder1").checked &&
+//         document.getElementById("repoFolder2").checked &&
+//         document.getElementById("repoFolder3").checked
+//       ) {
+//         value = value1 + "," + value2 + "," + value3;
+//       }
+
+//       if (
+//         document.getElementById("repoFolder1").checked == 0 &&
+//         document.getElementById("repoFolder2").checked == 0 &&
+//         document.getElementById("repoFolder3").checked == 0
+//       ) {
+//         value = "";
+//       }
+//     } else if (choice_length == "2") {
+//       var value1 = document
+//         .getElementById("repoFolder1")
+//         .getAttribute("data-value1");
+//       var value2 = document
+//         .getElementById("repoFolder2")
+//         .getAttribute("data-value2");
+
+//       var vals = "";
+
+//       if (document.getElementById("repoFolder1").checked) {
+//         value = value1;
+//         //alert(value);
+//       }
+//       if (document.getElementById("repoFolder2").checked) {
+//         value = value2;
+//         //alert(value);
+//       }
+
+//       if (
+//         document.getElementById("repoFolder1").checked &&
+//         document.getElementById("repoFolder2").checked
+//       ) {
+//         value = value1 + "," + value2;
+//       }
+//       if (
+//         document.getElementById("repoFolder1").checked == 0 &&
+//         document.getElementById("repoFolder2").checked == 0
+//       ) {
+//         value = "";
+//       }
+//     } else if (choice_length == "5") {
+//       var value1 = document
+//         .getElementById("repoFolder1")
+//         .getAttribute("data-value1");
+//       var value2 = document
+//         .getElementById("repoFolder2")
+//         .getAttribute("data-value2");
+//       var value3 = document
+//         .getElementById("repoFolder3")
+//         .getAttribute("data-value3");
+//       var value4 = document
+//         .getElementById("repoFolder4")
+//         .getAttribute("data-value4");
+//       var value5 = document
+//         .getElementById("repoFolder5")
+//         .getAttribute("data-value5");
+
+//       var vals = "";
+
+//       if (document.getElementById("repoFolder1").checked) {
+//         value = value1;
+//         //alert(value);
+//       }
+//       if (document.getElementById("repoFolder2").checked) {
+//         value = value2;
+//         //alert(value);
+//       }
+//       if (document.getElementById("repoFolder3").checked) {
+//         value = value3;
+//         //alert(value);
+//       }
+//       if (document.getElementById("repoFolder4").checked) {
+//         value = value4;
+//         //alert(value);
+//       }
+//       if (document.getElementById("repoFolder5").checked) {
+//         value = value5;
+//         //alert(value);
+//       }
+//       if (
+//         document.getElementById("repoFolder1").checked &&
+//         document.getElementById("repoFolder2").checked
+//       ) {
+//         value = value1 + "," + value2;
+//       }
+//       if (
+//         document.getElementById("repoFolder1").checked &&
+//         document.getElementById("repoFolder4").checked
+//       ) {
+//         value = value1 + "," + value4;
+//       }
+//       if (
+//         document.getElementById("repoFolder1").checked &&
+//         document.getElementById("repoFolder5").checked
+//       ) {
+//         value = value1 + "," + value5;
+//       }
+//       if (
+//         document.getElementById("repoFolder1").checked &&
+//         document.getElementById("repoFolder3").checked
+//       ) {
+//         value = value1 + "," + value3;
+//       }
+//       if (
+//         document.getElementById("repoFolder2").checked &&
+//         document.getElementById("repoFolder3").checked
+//       ) {
+//         value = value2 + "," + value3;
+//       }
+//       if (
+//         document.getElementById("repoFolder2").checked &&
+//         document.getElementById("repoFolder4").checked
+//       ) {
+//         value = value2 + "," + value4;
+//       }
+//       if (
+//         document.getElementById("repoFolder2").checked &&
+//         document.getElementById("repoFolder5").checked
+//       ) {
+//         value = value2 + "," + value5;
+//       }
+//       if (
+//         document.getElementById("repoFolder3").checked &&
+//         document.getElementById("repoFolder4").checked
+//       ) {
+//         value = value3 + "," + value4;
+//       }
+//       if (
+//         document.getElementById("repoFolder3").checked &&
+//         document.getElementById("repoFolder5").checked
+//       ) {
+//         value = value3 + "," + value5;
+//       }
+//       if (
+//         document.getElementById("repoFolder5").checked &&
+//         document.getElementById("repoFolder4").checked
+//       ) {
+//         value = value5 + "," + value4;
+//       }
+
+//       if (
+//         document.getElementById("repoFolder1").checked &&
+//         document.getElementById("repoFolder2").checked &&
+//         document.getElementById("repoFolder3").checked
+//       ) {
+//         value = value1 + "," + value2 + "," + value3;
+//       }
+//       if (
+//         document.getElementById("repoFolder1").checked &&
+//         document.getElementById("repoFolder4").checked &&
+//         document.getElementById("repoFolder3").checked
+//       ) {
+//         value = value1 + "," + value4 + "," + value3;
+//       }
+//       if (
+//         document.getElementById("repoFolder1").checked &&
+//         document.getElementById("repoFolder5").checked &&
+//         document.getElementById("repoFolder3").checked
+//       ) {
+//         value = value1 + "," + value5 + "," + value3;
+//       }
+//       if (
+//         document.getElementById("repoFolder1").checked &&
+//         document.getElementById("repoFolder5").checked &&
+//         document.getElementById("repoFolder2").checked
+//       ) {
+//         value = value1 + "," + value5 + "," + value2;
+//       }
+//       if (
+//         document.getElementById("repoFolder1").checked &&
+//         document.getElementById("repoFolder5").checked &&
+//         document.getElementById("repoFolder4").checked
+//       ) {
+//         value = value1 + "," + value5 + "," + value4;
+//       }
+
+//       if (
+//         document.getElementById("repoFolder2").checked &&
+//         document.getElementById("repoFolder3").checked &&
+//         document.getElementById("repoFolder4").checked
+//       ) {
+//         value = value2 + "," + value3 + "," + value4;
+//       }
+//       if (
+//         document.getElementById("repoFolder2").checked &&
+//         document.getElementById("repoFolder5").checked &&
+//         document.getElementById("repoFolder4").checked
+//       ) {
+//         value = value2 + "," + value5 + "," + value4;
+//       }
+
+//       if (
+//         document.getElementById("repoFolder3").checked &&
+//         document.getElementById("repoFolder4").checked &&
+//         document.getElementById("repoFolder1").checked
+//       ) {
+//         value = value3 + "," + value4 + "," + value1;
+//       }
+//       if (
+//         document.getElementById("repoFolder3").checked &&
+//         document.getElementById("repoFolder4").checked &&
+//         document.getElementById("repoFolder5").checked
+//       ) {
+//         value = value3 + "," + value4 + "," + value5;
+//       }
+
+//       if (
+//         document.getElementById("repoFolder1").checked &&
+//         document.getElementById("repoFolder2").checked &&
+//         document.getElementById("repoFolder3").checked &&
+//         document.getElementById("repoFolder4").checked
+//       ) {
+//         value = value1 + "," + value2 + "," + value3 + "," + value4;
+//       }
+//       if (
+//         document.getElementById("repoFolder1").checked &&
+//         document.getElementById("repoFolder2").checked &&
+//         document.getElementById("repoFolder3").checked &&
+//         document.getElementById("repoFolder5").checked
+//       ) {
+//         value = value1 + "," + value2 + "," + value3 + "," + value5;
+//       }
+//       if (
+//         document.getElementById("repoFolder1").checked &&
+//         document.getElementById("repoFolder4").checked &&
+//         document.getElementById("repoFolder3").checked &&
+//         document.getElementById("repoFolder5").checked
+//       ) {
+//         value = value1 + "," + value4 + "," + value3 + "," + value5;
+//       }
+//       if (
+//         document.getElementById("repoFolder2").checked &&
+//         document.getElementById("repoFolder4").checked &&
+//         document.getElementById("repoFolder3").checked &&
+//         document.getElementById("repoFolder5").checked
+//       ) {
+//         value = value2 + "," + value4 + "," + value3 + "," + value5;
+//       }
+//       if (
+//         document.getElementById("repoFolder2").checked &&
+//         document.getElementById("repoFolder4").checked &&
+//         document.getElementById("repoFolder1").checked &&
+//         document.getElementById("repoFolder5").checked
+//       ) {
+//         value = value2 + "," + value4 + "," + value1 + "," + value5;
+//       }
+
+//       if (
+//         document.getElementById("repoFolder1").checked == 0 &&
+//         document.getElementById("repoFolder2").checked == 0 &&
+//         document.getElementById("repoFolder3").checked == 0 &&
+//         document.getElementById("repoFolder4").checked == 0 &&
+//         document.getElementById("repoFolder5").checked == 0
+//       ) {
+//         value = "";
+//       }
+//     }
+//   } else if (question_type == "match_the_following") {
+//     var values1 = document.getElementById("bt1").value;
+//     var values2 = document.getElementById("bt2").value;
+//     var values3 = document.getElementById("bt3").value;
+//     var values4 = document.getElementById("bt4").value;
+
+//     var element = document.getElementById("sel1");
+
+//     var selectedValue = element.options[element.selectedIndex].value;
+
+//     var element = document.getElementById("next");
+
+//     var selectedValue1 = element.options[element.selectedIndex].value;
+
+//     var element = document.getElementById("right");
+//     var selectedValue2 = element.options[element.selectedIndex].value;
+
+//     var element = document.getElementById("wrong");
+//     var selectedValue3 = element.options[element.selectedIndex].value;
+
+//     var value1 = values1 + "-" + selectedValue;
+//     var value2 = values2 + "-" + selectedValue1;
+//     var value3 = values3 + "-" + selectedValue2;
+//     var value4 = values4 + "-" + selectedValue3;
+
+//     var value = value1 + "," + value2 + "," + value3 + "," + value4;
+
+//     if (
+//       selectedValue == "" &&
+//       selectedValue1 == "" &&
+//       selectedValue2 == "" &&
+//       selectedValue3 == ""
+//     ) {
+//       value = "";
+//     }
+//   }
+//   //var tim = document.getElementById('demo').innerText;
+
+//   //alert(tim[2]+""+tim[3]);
+
+//   //alert(elapsed_time1);
+
+//   /*	if(elapsed_time1 <= tim.slice(2, 5))
+// 		{
+
+// 	var res = tim.slice(2, 5);
+
+// 	var res1 = tim.slice(7, 9);
+
+// 	var elapsed_time = res +"."+res1;
+
+// 	//alert(res + "." +res1)
+
+
+
+// 		}
+
+// 	else if(elapsed_time1 <= tim.slice(2, 6) )
+// 	{
+// 	var res = tim.slice(2, 6);
+
+// 	var res1 = tim.slice(8, 10);
+
+
+// 	var elapsed_time = res +"."+res1;
+
+// 	//alert(res + "." +res1)
+
+
+
+// 	}
+
+// 	else if(elapsed_time1 < tim.slice(2, 4))
+// 	{
+
+// 		var res = tim.slice(2, 4);
+
+
+// 		var res1 = tim.slice(6, 8);
+
+// 		//alert(res + "." +res1)
+
+		
+// 		var elapsed_time = res +"."+res1;
+		
+
+// 	}
+// */
+
+//   var question_id = localStorage.getItem("id1");
+//   console.log(value);
+
+//   // $.ajax({
+//   //   url:
+//   //     "https://toyota-lakshya-onlineassessment.in/api/submit_answer/?login_id=" +
+//   //     lakshya_id +
+//   //     "&assessment_id=" +
+//   //     assessment_id +
+//   //     "&question_id=" +
+//   //     question_id +
+//   //     "&elapsed_time=" +
+//   //     elapsed_time +
+//   //     "&answer="+value+"",
+//   //   type: "GET",
+//   //   dataType: "json",
+//   //   success: function (data) {
+//   //     console.log(data);
+//   //     var status = data.status;
+//   //     if (status == "success" && value) {
+//   //       get_next_qn();
+//   //       console.log(status);
+//   //       $("#overlay").fadeIn(300);
+//   //     } else {
+// 	// 	value=value+"data"
+//   //       alert("Error",value);
+//   //       console.log("error");
+//   //     }
+//   //   },
+//   // }).done(function () {
+//   //   setTimeout(function () {
+//   //     $("#overlay").fadeOut(300);
+//   //   }, 300);
+//   // });
+//   var url =
+//     "https://toyota-lakshya-onlineassessment.in/api/submit_answer/?" +
+//     "login_id=" +
+//     lakshya_id +
+//     "&assessment_id=" +
+//     assessment_id +
+//     "&question_id=" +
+//     question_id +
+//     "&elapsed_time=" +
+//     elapsed_time +
+//     "&answer=" +
+//     value;
+
+//   // Using the Fetch API
+//   fetch(url)
+//     .then((response) => response.json())
+//     .then((data) => {
+//       console.log(data);
+//       var status = data.status;
+//       if (status === "success" && value) {
+//         get_next_qn();
+//         console.log(status);
+//         $("#overlay").fadeIn(300);
+//       } else {
+//         value = value + "data";
+//         console.error("Error", value);
+//         console.log("error");
+//       }
+//     })
+//     .catch((error) => {
+//       console.error("Fetch error:", error);
+//     })
+//     .finally(() => {
+//       setTimeout(() => {
+//         $("#overlay").fadeOut(300);
+//       }, 300);
+//     });
+// }
+
 function submitanswer() {
   $("#overlay").fadeIn(300);
   console.log("hii from submit answer");
@@ -108,636 +784,51 @@ function submitanswer() {
   var assessment_id = localStorage.getItem("assessment_id");
 
   var demo_time = document.getElementById("demo").innerHTML;
-  if (demo_time.length == "11") {
-    var elapsed_time = demo_time.slice(2, 6);
-  } else if (demo_time.length == "10") {
-    var elapsed_time = demo_time.slice(2, 5);
-  } else if (demo_time.length == "9") {
-    var elapsed_time = demo_time.slice(2, 4);
+  var elapsed_time;
+
+  if (demo_time.length >= 9) {
+    elapsed_time = demo_time.slice(2, demo_time.length - 3);
   }
 
   var value;
 
-  if (question_type == "single_choice") {
-    if (choice_length == "4") {
-      var ids1 = document.getElementById("myBtn1").value;
-      var ids2 = document.getElementById("myBtn2").value;
-      var ids3 = document.getElementById("myBtn3").value;
-      var ids4 = document.getElementById("myBtn4").value;
+  if (question_type === "single_choice" || question_type === "multiple_choice") {
+    var choices = [];
 
-      if (
-        localStorage["key"] == ids1 ||
-        localStorage["key"] == ids2 ||
-        localStorage["key"] == ids3 ||
-        localStorage["key"] == ids4
-      ) {
-        var value = localStorage["key"];
+    for (let i = 1; i <= choice_length; i++) {
+      var ids = document.getElementById("myBtn" + i).value;
 
+      if (localStorage["key"] === ids) {
+        value = localStorage["key"];
         alert(value);
+        break;
       }
-      if (
-        localStorage["key"] != ids1 &&
-        localStorage["key"] != ids2 &&
-        localStorage["key"] != ids3 &&
-        localStorage["key"] != ids4
-      ) {
-        value = "";
-      }
-    } else if (choice_length == "5") {
-      var ids1 = document.getElementById("myBtn1").value;
-      var ids2 = document.getElementById("myBtn2").value;
-      var ids3 = document.getElementById("myBtn3").value;
-      var ids4 = document.getElementById("myBtn4").value;
-      var ids5 = document.getElementById("myBtn5").value;
-
-      if (
-        localStorage["key"] == ids1 ||
-        localStorage["key"] == ids2 ||
-        localStorage["key"] == ids3 ||
-        localStorage["key"] == ids4 ||
-        localStorage["key"] == ids5
-      ) {
-        var value = localStorage["key"];
-
-        alert(value);
-      }
-      if (
-        (localStorage["key"] != ids1 &&
-          localStorage["key"] != ids2 &&
-          localStorage["key"] != ids3 &&
-          localStorage["key"] != ids4) ||
-        localStorage["key"] == ids5
-      ) {
-        value = "";
-      }
-    } else if (choice_length == "2") {
-      var ids1 = document.getElementById("myBtn1").value;
-      var ids2 = document.getElementById("myBtn2").value;
-
-      if (localStorage["key"] == ids1 || localStorage["key"] == ids2) {
-        var value = localStorage["key"];
-
-        alert(value);
-      }
-      if (localStorage["key"] != ids1 && localStorage["key"] != ids2) {
-        value = "";
-      }
-    } else if (choice_length == "3") {
-      var ids1 = document.getElementById("myBtn1").value;
-      var ids2 = document.getElementById("myBtn2").value;
-      var ids3 = document.getElementById("myBtn3").value;
-
-      if (
-        localStorage["key"] == ids1 ||
-        localStorage["key"] == ids2 ||
-        localStorage["key"] == ids3
-      ) {
-        var value = localStorage.getItem("key");
-      }
-      if (
-        localStorage["key"] != ids1 &&
-        localStorage["key"] != ids2 &&
-        localStorage["key"] != ids3
-      ) {
-        value = "";
-      }
+      choices.push(ids);
     }
-  } else if (question_type == "descriptive") {
-    var value = document.getElementById("descriptionn").value;
-  } else if (question_type == "image_descriptive") {
-    var value = document.getElementById("descriptionn1").value;
-  } else if (question_type == "multiple_choice") {
-    if (choice_length == "4") {
-      var value1 = document
-        .getElementById("repoFolder1")
-        .getAttribute("data-value1");
-      var value2 = document
-        .getElementById("repoFolder2")
-        .getAttribute("data-value2");
-      var value3 = document
-        .getElementById("repoFolder3")
-        .getAttribute("data-value3");
-      var value4 = document
-        .getElementById("repoFolder4")
-        .getAttribute("data-value4");
 
-      var vals = "";
-
-      if (document.getElementById("repoFolder1").checked) {
-        value = value1;
-        //alert(value);
-      }
-      if (document.getElementById("repoFolder2").checked) {
-        value = value2;
-        //alert(value);
-      }
-      if (document.getElementById("repoFolder3").checked) {
-        value = value3;
-        //alert(value);
-      }
-      if (document.getElementById("repoFolder4").checked) {
-        value = value4;
-        //alert(value);
-      }
-      if (
-        document.getElementById("repoFolder1").checked &&
-        document.getElementById("repoFolder2").checked
-      ) {
-        value = value1 + "," + value2;
-      }
-      if (
-        document.getElementById("repoFolder2").checked &&
-        document.getElementById("repoFolder3").checked
-      ) {
-        value = value2 + "," + value3;
-      }
-      if (
-        document.getElementById("repoFolder3").checked &&
-        document.getElementById("repoFolder4").checked
-      ) {
-        value = value3 + "," + value4;
-      }
-      if (
-        document.getElementById("repoFolder1").checked &&
-        document.getElementById("repoFolder4").checked
-      ) {
-        value = value1 + "," + value4;
-      }
-      if (
-        document.getElementById("repoFolder1").checked &&
-        document.getElementById("repoFolder2").checked &&
-        document.getElementById("repoFolder3").checked
-      ) {
-        value = value1 + "," + value2 + "," + value3;
-      }
-      if (
-        document.getElementById("repoFolder2").checked &&
-        document.getElementById("repoFolder3").checked &&
-        document.getElementById("repoFolder4").checked
-      ) {
-        value = value2 + "," + value3 + "," + value4;
-      }
-      if (
-        document.getElementById("repoFolder3").checked &&
-        document.getElementById("repoFolder4").checked &&
-        document.getElementById("repoFolder1").checked
-      ) {
-        value = value3 + "," + value4 + "," + value1;
-      }
-      if (
-        document.getElementById("repoFolder1").checked &&
-        document.getElementById("repoFolder2").checked &&
-        document.getElementById("repoFolder4").checked
-      ) {
-        value = value1 + "," + value2 + "," + value4;
-      }
-      if (
-        document.getElementById("repoFolder1").checked &&
-        document.getElementById("repoFolder2").checked &&
-        document.getElementById("repoFolder3").checked &&
-        document.getElementById("repoFolder4").checked
-      ) {
-        value = value1 + "," + value2 + "," + value3 + "," + value4;
-      }
-      if (
-        document.getElementById("repoFolder1").checked == 0 &&
-        document.getElementById("repoFolder2").checked == 0 &&
-        document.getElementById("repoFolder3").checked == 0 &&
-        document.getElementById("repoFolder4").checked == 0
-      ) {
-        value = "";
-      }
-    } else if (choice_length == "3") {
-      var value1 = document
-        .getElementById("repoFolder1")
-        .getAttribute("data-value1");
-      var value2 = document
-        .getElementById("repoFolder2")
-        .getAttribute("data-value2");
-      var value3 = document
-        .getElementById("repoFolder3")
-        .getAttribute("data-value3");
-
-      var vals = "";
-
-      if (document.getElementById("repoFolder1").checked) {
-        value = value1;
-        //alert(value);
-      }
-      if (document.getElementById("repoFolder2").checked) {
-        value = value2;
-        //alert(value);
-      }
-      if (document.getElementById("repoFolder3").checked) {
-        value = value3;
-        //alert(value);
-      }
-
-      if (
-        document.getElementById("repoFolder1").checked &&
-        document.getElementById("repoFolder2").checked
-      ) {
-        value = value1 + "," + value2;
-      }
-      if (
-        document.getElementById("repoFolder2").checked &&
-        document.getElementById("repoFolder3").checked
-      ) {
-        value = value2 + "," + value3;
-      }
-
-      if (
-        document.getElementById("repoFolder1").checked &&
-        document.getElementById("repoFolder3").checked
-      ) {
-        value = value1 + "," + value3;
-      }
-      if (
-        document.getElementById("repoFolder1").checked &&
-        document.getElementById("repoFolder2").checked &&
-        document.getElementById("repoFolder3").checked
-      ) {
-        value = value1 + "," + value2 + "," + value3;
-      }
-
-      if (
-        document.getElementById("repoFolder1").checked == 0 &&
-        document.getElementById("repoFolder2").checked == 0 &&
-        document.getElementById("repoFolder3").checked == 0
-      ) {
-        value = "";
-      }
-    } else if (choice_length == "2") {
-      var value1 = document
-        .getElementById("repoFolder1")
-        .getAttribute("data-value1");
-      var value2 = document
-        .getElementById("repoFolder2")
-        .getAttribute("data-value2");
-
-      var vals = "";
-
-      if (document.getElementById("repoFolder1").checked) {
-        value = value1;
-        //alert(value);
-      }
-      if (document.getElementById("repoFolder2").checked) {
-        value = value2;
-        //alert(value);
-      }
-
-      if (
-        document.getElementById("repoFolder1").checked &&
-        document.getElementById("repoFolder2").checked
-      ) {
-        value = value1 + "," + value2;
-      }
-      if (
-        document.getElementById("repoFolder1").checked == 0 &&
-        document.getElementById("repoFolder2").checked == 0
-      ) {
-        value = "";
-      }
-    } else if (choice_length == "5") {
-      var value1 = document
-        .getElementById("repoFolder1")
-        .getAttribute("data-value1");
-      var value2 = document
-        .getElementById("repoFolder2")
-        .getAttribute("data-value2");
-      var value3 = document
-        .getElementById("repoFolder3")
-        .getAttribute("data-value3");
-      var value4 = document
-        .getElementById("repoFolder4")
-        .getAttribute("data-value4");
-      var value5 = document
-        .getElementById("repoFolder5")
-        .getAttribute("data-value5");
-
-      var vals = "";
-
-      if (document.getElementById("repoFolder1").checked) {
-        value = value1;
-        //alert(value);
-      }
-      if (document.getElementById("repoFolder2").checked) {
-        value = value2;
-        //alert(value);
-      }
-      if (document.getElementById("repoFolder3").checked) {
-        value = value3;
-        //alert(value);
-      }
-      if (document.getElementById("repoFolder4").checked) {
-        value = value4;
-        //alert(value);
-      }
-      if (document.getElementById("repoFolder5").checked) {
-        value = value5;
-        //alert(value);
-      }
-      if (
-        document.getElementById("repoFolder1").checked &&
-        document.getElementById("repoFolder2").checked
-      ) {
-        value = value1 + "," + value2;
-      }
-      if (
-        document.getElementById("repoFolder1").checked &&
-        document.getElementById("repoFolder4").checked
-      ) {
-        value = value1 + "," + value4;
-      }
-      if (
-        document.getElementById("repoFolder1").checked &&
-        document.getElementById("repoFolder5").checked
-      ) {
-        value = value1 + "," + value5;
-      }
-      if (
-        document.getElementById("repoFolder1").checked &&
-        document.getElementById("repoFolder3").checked
-      ) {
-        value = value1 + "," + value3;
-      }
-      if (
-        document.getElementById("repoFolder2").checked &&
-        document.getElementById("repoFolder3").checked
-      ) {
-        value = value2 + "," + value3;
-      }
-      if (
-        document.getElementById("repoFolder2").checked &&
-        document.getElementById("repoFolder4").checked
-      ) {
-        value = value2 + "," + value4;
-      }
-      if (
-        document.getElementById("repoFolder2").checked &&
-        document.getElementById("repoFolder5").checked
-      ) {
-        value = value2 + "," + value5;
-      }
-      if (
-        document.getElementById("repoFolder3").checked &&
-        document.getElementById("repoFolder4").checked
-      ) {
-        value = value3 + "," + value4;
-      }
-      if (
-        document.getElementById("repoFolder3").checked &&
-        document.getElementById("repoFolder5").checked
-      ) {
-        value = value3 + "," + value5;
-      }
-      if (
-        document.getElementById("repoFolder5").checked &&
-        document.getElementById("repoFolder4").checked
-      ) {
-        value = value5 + "," + value4;
-      }
-
-      if (
-        document.getElementById("repoFolder1").checked &&
-        document.getElementById("repoFolder2").checked &&
-        document.getElementById("repoFolder3").checked
-      ) {
-        value = value1 + "," + value2 + "," + value3;
-      }
-      if (
-        document.getElementById("repoFolder1").checked &&
-        document.getElementById("repoFolder4").checked &&
-        document.getElementById("repoFolder3").checked
-      ) {
-        value = value1 + "," + value4 + "," + value3;
-      }
-      if (
-        document.getElementById("repoFolder1").checked &&
-        document.getElementById("repoFolder5").checked &&
-        document.getElementById("repoFolder3").checked
-      ) {
-        value = value1 + "," + value5 + "," + value3;
-      }
-      if (
-        document.getElementById("repoFolder1").checked &&
-        document.getElementById("repoFolder5").checked &&
-        document.getElementById("repoFolder2").checked
-      ) {
-        value = value1 + "," + value5 + "," + value2;
-      }
-      if (
-        document.getElementById("repoFolder1").checked &&
-        document.getElementById("repoFolder5").checked &&
-        document.getElementById("repoFolder4").checked
-      ) {
-        value = value1 + "," + value5 + "," + value4;
-      }
-
-      if (
-        document.getElementById("repoFolder2").checked &&
-        document.getElementById("repoFolder3").checked &&
-        document.getElementById("repoFolder4").checked
-      ) {
-        value = value2 + "," + value3 + "," + value4;
-      }
-      if (
-        document.getElementById("repoFolder2").checked &&
-        document.getElementById("repoFolder5").checked &&
-        document.getElementById("repoFolder4").checked
-      ) {
-        value = value2 + "," + value5 + "," + value4;
-      }
-
-      if (
-        document.getElementById("repoFolder3").checked &&
-        document.getElementById("repoFolder4").checked &&
-        document.getElementById("repoFolder1").checked
-      ) {
-        value = value3 + "," + value4 + "," + value1;
-      }
-      if (
-        document.getElementById("repoFolder3").checked &&
-        document.getElementById("repoFolder4").checked &&
-        document.getElementById("repoFolder5").checked
-      ) {
-        value = value3 + "," + value4 + "," + value5;
-      }
-
-      if (
-        document.getElementById("repoFolder1").checked &&
-        document.getElementById("repoFolder2").checked &&
-        document.getElementById("repoFolder3").checked &&
-        document.getElementById("repoFolder4").checked
-      ) {
-        value = value1 + "," + value2 + "," + value3 + "," + value4;
-      }
-      if (
-        document.getElementById("repoFolder1").checked &&
-        document.getElementById("repoFolder2").checked &&
-        document.getElementById("repoFolder3").checked &&
-        document.getElementById("repoFolder5").checked
-      ) {
-        value = value1 + "," + value2 + "," + value3 + "," + value5;
-      }
-      if (
-        document.getElementById("repoFolder1").checked &&
-        document.getElementById("repoFolder4").checked &&
-        document.getElementById("repoFolder3").checked &&
-        document.getElementById("repoFolder5").checked
-      ) {
-        value = value1 + "," + value4 + "," + value3 + "," + value5;
-      }
-      if (
-        document.getElementById("repoFolder2").checked &&
-        document.getElementById("repoFolder4").checked &&
-        document.getElementById("repoFolder3").checked &&
-        document.getElementById("repoFolder5").checked
-      ) {
-        value = value2 + "," + value4 + "," + value3 + "," + value5;
-      }
-      if (
-        document.getElementById("repoFolder2").checked &&
-        document.getElementById("repoFolder4").checked &&
-        document.getElementById("repoFolder1").checked &&
-        document.getElementById("repoFolder5").checked
-      ) {
-        value = value2 + "," + value4 + "," + value1 + "," + value5;
-      }
-
-      if (
-        document.getElementById("repoFolder1").checked == 0 &&
-        document.getElementById("repoFolder2").checked == 0 &&
-        document.getElementById("repoFolder3").checked == 0 &&
-        document.getElementById("repoFolder4").checked == 0 &&
-        document.getElementById("repoFolder5").checked == 0
-      ) {
-        value = "";
-      }
+    if (!value) {
+      value = choices.includes(localStorage["key"]) ? localStorage["key"] : "";
     }
-  } else if (question_type == "match_the_following") {
-    var values1 = document.getElementById("bt1").value;
-    var values2 = document.getElementById("bt2").value;
-    var values3 = document.getElementById("bt3").value;
-    var values4 = document.getElementById("bt4").value;
+  } else if (question_type === "descriptive" || question_type === "image_descriptive") {
+    value = document.getElementById("descriptionn").value;
+  } else if (question_type === "match_the_following") {
+    var values = [];
 
-    var element = document.getElementById("sel1");
+    for (let i = 1; i <= 4; i++) {
+      var btValue = document.getElementById("bt" + i).value;
+      var selectValue = document.getElementById("sel" + i).value;
+      values.push(btValue + "-" + selectValue);
+    }
 
-    var selectedValue = element.options[element.selectedIndex].value;
-
-    var element = document.getElementById("next");
-
-    var selectedValue1 = element.options[element.selectedIndex].value;
-
-    var element = document.getElementById("right");
-    var selectedValue2 = element.options[element.selectedIndex].value;
-
-    var element = document.getElementById("wrong");
-    var selectedValue3 = element.options[element.selectedIndex].value;
-
-    var value1 = values1 + "-" + selectedValue;
-    var value2 = values2 + "-" + selectedValue1;
-    var value3 = values3 + "-" + selectedValue2;
-    var value4 = values4 + "-" + selectedValue3;
-
-    var value = value1 + "," + value2 + "," + value3 + "," + value4;
-
-    if (
-      selectedValue == "" &&
-      selectedValue1 == "" &&
-      selectedValue2 == "" &&
-      selectedValue3 == ""
-    ) {
-      value = "";
+    value = values.join(",");
+    if (values.every((v) => v.endsWith("-"))) {
+      value = ""; // All dropdowns are not selected
     }
   }
-  //var tim = document.getElementById('demo').innerText;
-
-  //alert(tim[2]+""+tim[3]);
-
-  //alert(elapsed_time1);
-
-  /*	if(elapsed_time1 <= tim.slice(2, 5))
-		{
-
-	var res = tim.slice(2, 5);
-
-	var res1 = tim.slice(7, 9);
-
-	var elapsed_time = res +"."+res1;
-
-	//alert(res + "." +res1)
-
-
-
-		}
-
-	else if(elapsed_time1 <= tim.slice(2, 6) )
-	{
-	var res = tim.slice(2, 6);
-
-	var res1 = tim.slice(8, 10);
-
-
-	var elapsed_time = res +"."+res1;
-
-	//alert(res + "." +res1)
-
-
-
-	}
-
-	else if(elapsed_time1 < tim.slice(2, 4))
-	{
-
-		var res = tim.slice(2, 4);
-
-
-		var res1 = tim.slice(6, 8);
-
-		//alert(res + "." +res1)
-
-		
-		var elapsed_time = res +"."+res1;
-		
-
-	}
-*/
 
   var question_id = localStorage.getItem("id1");
   console.log(value);
 
-  // $.ajax({
-  //   url:
-  //     "https://toyota-lakshya-onlineassessment.in/api/submit_answer/?login_id=" +
-  //     lakshya_id +
-  //     "&assessment_id=" +
-  //     assessment_id +
-  //     "&question_id=" +
-  //     question_id +
-  //     "&elapsed_time=" +
-  //     elapsed_time +
-  //     "&answer="+value+"",
-  //   type: "GET",
-  //   dataType: "json",
-  //   success: function (data) {
-  //     console.log(data);
-  //     var status = data.status;
-  //     if (status == "success" && value) {
-  //       get_next_qn();
-  //       console.log(status);
-  //       $("#overlay").fadeIn(300);
-  //     } else {
-	// 	value=value+"data"
-  //       alert("Error",value);
-  //       console.log("error");
-  //     }
-  //   },
-  // }).done(function () {
-  //   setTimeout(function () {
-  //     $("#overlay").fadeOut(300);
-  //   }, 300);
-  // });
   var url =
     "https://toyota-lakshya-onlineassessment.in/api/submit_answer/?" +
     "login_id=" +
@@ -751,7 +842,6 @@ function submitanswer() {
     "&answer=" +
     value;
 
-  // Using the Fetch API
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
@@ -776,6 +866,7 @@ function submitanswer() {
       }, 300);
     });
 }
+
 
 function question1(data) {
   var obj = data.question;
