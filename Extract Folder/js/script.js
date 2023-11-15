@@ -1268,6 +1268,8 @@ function myFunction1() {
   var x = document.getElementById("myBtn1").value;
   alert(x)
   localStorage["key"] = x;
+  let data=localStorage["key"] 
+  alert(data())
   alert(localStorage["key"])
 }
 
