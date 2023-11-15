@@ -170,13 +170,13 @@ if(question_type=='single_choice')
 		var ids3 = document.getElementById('myBtn3').value;
 		var ids4 = document.getElementById('myBtn4').value;
 		
-		if(localStorage["key"] == ids1 || localStorage["key"] == ids2 || localStorage["key"] == ids3 || localStorage["key"] == ids4)
+		if(localStorage.getItem("key")  == ids1 || localStorage.getItem("key") == ids2 ||localStorage.getItem("key") == ids3 || localStorage.getItem("key")  == ids4)
 		{
 			
-			value = localStorage["key"];
+			value = localStorage.getItem("key") ;
 			//alert(value);
 		}
-		if(localStorage["key"] != ids1 && localStorage["key"] != ids2 && localStorage["key"] != ids3 && localStorage["key"] != ids4)
+		if(localStorage.getItem("key")  != ids1 && localStorage.getItem("key")  != ids2 && localStorage.getItem("key")  != ids3 && localStorage.getItem("key") != ids4)
 		{
 			value = "";
 		}
@@ -194,13 +194,13 @@ if(question_type=='single_choice')
 		var ids5 = document.getElementById('myBtn5').value;
 
 		
-		if(localStorage["key"] == ids1 || localStorage["key"] == ids2 || localStorage["key"] == ids3 || localStorage["key"] == ids4 || localStorage["key"] == ids5 )
+		if(localStorage.getItem("key") == ids1 || localStorage.getItem("key") == ids2 || localStorage.getItem("key") == ids3 || localStorage.getItem("key") == ids4 || localStorage.getItem("key") == ids5 )
 		{
 			
 			value = localStorage["key"];
 			//alert(value);
 		}
-		if(localStorage["key"] != ids1 && localStorage["key"] != ids2 && localStorage["key"] != ids3 && localStorage["key"] != ids4 || localStorage["key"] == ids5 )
+		if(localStorage.getItem("key") != ids1 && localStorage.getItem("key") != ids2 && localStorage.getItem("key") != ids3 && localStorage.getItem("key") != ids4 || localStorage.getItem("key") == ids5 )
 		{
 			value = "";
 		}
@@ -215,13 +215,13 @@ else if(choice_length == "2")
 	var ids2 = document.getElementById('myBtn2').value;
 	
 	
-	if(localStorage["key"] == ids1 || localStorage["key"] == ids2 )
+	if(localStorage.getItem("key") == ids1 || localStorage.getItem("key") == ids2 )
 	{
 		
 		value = localStorage["key"];
 		//alert(value);
 	}
-	if(localStorage["key"] != ids1 && localStorage["key"] != ids2 )
+	if(localStorage.getItem("key") != ids1 && localStorage.getItem("key") != ids2 )
 	{
 		value = "";
 	}
@@ -238,12 +238,12 @@ else if(choice_length == "3")
 
 	
 	
-	if(localStorage["key"] == ids1 || localStorage["key"] == ids2 || localStorage["key"] == ids3 )
+	if(localStorage.getItem("key") == ids1 || localStorage.getItem("key") == ids2 || localStorage.getItem("key") == ids3 )
 	{
 		
 		value = localStorage["key"];
 	}
-	if(localStorage["key"] != ids1 && localStorage["key"] != ids2 && localStorage["key"] != ids3 )
+	if(localStorage.getItem("key") != ids1 && localStorage.getItem("key") != ids2 && localStorage.getItem("key") != ids3 )
 	{
 		value = "";
 	}
@@ -1028,31 +1028,31 @@ $("#bodypage").html(collection);
 {
 	  
 	  var x = document.getElementById("myBtn1").value;
-	  localStorage["key"] = x;	  
+	  localStorage.setItem("key", x); 	  
 }
 
 function myFunction2() 
 {
 	  var x = document.getElementById("myBtn2").value;
-	  localStorage["key"] = x;
+	  localStorage.setItem("key", x); 
 }
 function myFunction3() 
 {
 	  var x = document.getElementById("myBtn3").value;
 	  
-	  localStorage["key"] = x;
+	  localStorage.setItem("key", x); 
 }
 function myFunction4() 
 {
 	  var x = document.getElementById("myBtn4").value;
 	  
-	  localStorage["key"] = x;
+	  localStorage.setItem("key", x); 
 }
 function myFunction5() 
 {
 	  var x = document.getElementById("myBtn5").value;
 	  
-	  localStorage["key"] = x;
+	  localStorage.setItem("key", x); 
 }
 
 
