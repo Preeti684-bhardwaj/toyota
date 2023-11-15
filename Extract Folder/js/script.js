@@ -1,9 +1,5 @@
 var executed = false;
 
-function alertSomething(){
-	alert("hii i am working")
-}
-
 function get_next_qn() {
   $("#overlay").fadeIn(300);
 
@@ -777,31 +773,6 @@ function get_next_qn() {
 //     });
 // }
 
-async function getAvailableSpace() {
-  if (navigator.storage && navigator.storage.estimate) {
-    try {
-      const storageEstimate = await navigator.storage.estimate();
-      const availableSpace = storageEstimate.quota > storageEstimate.usage ? storageEstimate.quota - storageEstimate.usage : 0;
-      return availableSpace;
-    } catch (error) {
-      console.error('Error estimating storage:', error);
-      return 0; // or handle the error in a way that makes sense for your application
-    }
-  } else {
-    console.error('Storage estimation not supported in this environment.');
-    return 0; // or handle the lack of support in a way that makes sense for your application
-  }
-}
-
-// Example usage:
-async function exampleUsage() {
-  const availableSpace = await getAvailableSpace();
-  alert('Available space:', availableSpace);
-}
-
-// Call the exampleUsage function
-exampleUsage();
-
 function submitanswer() {
   $("#overlay").fadeIn(300);
   console.log("hii from submit answer");
@@ -819,20 +790,17 @@ function submitanswer() {
 
   if (question_type === "single_choice" || question_type === "multiple_choice") {
     var choices = [];
- alert("hii i am choices="+choices)
     for (let i = 1; i <= choice_length; i++) {
       var ids = document.getElementById("myBtn" + i).value;
-  alert("hii i am id="+ids)
-      if (localStorage.getItem("key")== ids) {
+      if (localStorage.getItem("key")=== ids) {
         value = localStorage.getItem("key");
-        alert("line=803"+value);
         break;
       }
       choices.push(ids);
     }
 
     if (!value) {
-      value = choices.includes(localStorage["key"]) ? localStorage["key"] : "";
+      value = choices.includes(localStorage.getItem("key")) ? localStorage.getItem("key") : "";
     }
   } else if (question_type === "descriptive" || question_type === "image_descriptive") {
     value = document.getElementById("descriptionn").value;
@@ -852,7 +820,6 @@ function submitanswer() {
   }
 
   var question_id = localStorage.getItem("id1");
-  console.log(value);
   alert("line 831="+value)
   var url =
     "https://toyota-lakshya-onlineassessment.in/api/submit_answer/?" +
@@ -870,10 +837,8 @@ function submitanswer() {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      alert("line 848="+data);
-      exampleUsage();
       var status = data.status;
-      if (status === "success" && value) {
+      if (status === "success") {
         get_next_qn();
         console.log(status);
         $("#overlay").fadeIn(300);
@@ -1291,39 +1256,24 @@ function question1(data) {
 
 function myFunction1() {
   var x = document.getElementById("myBtn1").value;
-  alert(x)
-  // localStorage["key"] = x;
   localStorage.setItem("key", x) ;
-  alert(localStorage.getItem("key"))
 }
 
 function myFunction2() {
   var x = document.getElementById("myBtn2").value;
-  alert(x)
-  // localStorage["key"] = x;
   localStorage.setItem("key", x) ;
-  alert(localStorage.getItem("key"))
 }
 function myFunction3() {
   var x = document.getElementById("myBtn3").value;
-  alert(x)
-  localStorage["key"]=x
   localStorage.setItem("key", x) ;
-  alert(localStorage.getItem("key"))
 }
 function myFunction4() {
   var x = document.getElementById("myBtn4").value;
-  alert(x)
-  // localStorage["key"] = x;
   localStorage.setItem("key", x) ;
-  alert(localStorage.getItem("key"))
 }
 function myFunction5() {
   var x = document.getElementById("myBtn5").value;
-  alert(x)
-  // localStorage["key"] = x;
   localStorage.setItem("key", x) ;
-  alert(localStorage.getItem("key"))
 }
 
 function question2(data) {
