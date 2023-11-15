@@ -7,8 +7,8 @@ function alertSomething(){
 function get_next_qn() {
   $("#overlay").fadeIn(300);
 
-  var lakshya_id = localStorage.getItem("lakshya_id");
-  var assessment_id = localStorage.getItem("assessment_id");
+  var lakshya_id = sessionStorage.getItem("lakshya_id");
+  var assessment_id = sessionStorage.getItem("assessment_id");
   var page5 = '<label class="QLable" id="Q1">total_questions1</label>';
   var collectionss = "";
   var page6 =
@@ -30,7 +30,7 @@ function get_next_qn() {
 
       var times = data.elapsed_time;
 
-      localStorage.setItem("elapsed_time", times);
+      sessionStorage.setItem("elapsed_time", times);
       if (!executed) {
         initCountdown(times);
         executed = true;
@@ -73,7 +73,7 @@ function get_next_qn() {
 
       $("#attended").append(collectionsss);
 
-      localStorage.setItem("id1", question_id);
+      sessionStorage.setItem("id1", question_id);
       question_type = obj.question_type;
 
       data.question;
@@ -780,8 +780,8 @@ function get_next_qn() {
 function submitanswer() {
   $("#overlay").fadeIn(300);
   console.log("hii from submit answer");
-  var lakshya_id = localStorage.getItem("lakshya_id");
-  var assessment_id = localStorage.getItem("assessment_id");
+  var lakshya_id = sessionStorage.getItem("lakshya_id");
+  var assessment_id = sessionStorage.getItem("assessment_id");
 
   var demo_time = document.getElementById("demo").innerHTML;
   var elapsed_time;
@@ -798,8 +798,8 @@ function submitanswer() {
     for (let i = 1; i <= choice_length; i++) {
       var ids = document.getElementById("myBtn" + i).value;
 
-      if (localStorage["key"] === ids) {
-        value = localStorage["key"];
+      if (sessionStorage["key"] === ids) {
+        value = sessionStorage["key"];
         alert(value);
         break;
       }
@@ -807,7 +807,7 @@ function submitanswer() {
     }
 
     if (!value) {
-      value = choices.includes(localStorage["key"]) ? localStorage["key"] : "";
+      value = choices.includes(sessionStorage["key"]) ? sessionStorage["key"] : "";
     }
   } else if (question_type === "descriptive" || question_type === "image_descriptive") {
     value = document.getElementById("descriptionn").value;
@@ -826,7 +826,7 @@ function submitanswer() {
     }
   }
 
-  var question_id = localStorage.getItem("id1");
+  var question_id = sessionStorage.getItem("id1");
   console.log(value);
 
   var url =
@@ -1267,28 +1267,28 @@ function question1(data) {
 function myFunction1() {
   var x = document.getElementById("myBtn1").value;
   alert(x)
-  localStorage["key"] = x;
+  sessionStorage["key"] = x;
 }
 
 function myFunction2() {
   var x = document.getElementById("myBtn2").value;
   alert(x)
-  localStorage["key"] = x;
+  sessionStorage["key"] = x;
 }
 function myFunction3() {
   var x = document.getElementById("myBtn3").value;
   alert(x)
-  localStorage["key"] = x;
+  sessionStorage["key"] = x;
 }
 function myFunction4() {
   var x = document.getElementById("myBtn4").value;
   alert(x)
-  localStorage["key"] = x;
+  sessionStorage["key"] = x;
 }
 function myFunction5() {
   var x = document.getElementById("myBtn5").value;
   alert(x)
-  localStorage["key"] = x;
+  sessionStorage["key"] = x;
 }
 
 function question2(data) {
