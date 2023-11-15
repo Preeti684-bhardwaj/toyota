@@ -1294,7 +1294,7 @@ function myFunction1() {
   alert(x)
   // localStorage["key"] = x;
   localStorage.setItem("key", x) ;
-  alert(localStorage["key"])
+  alert(localStorage.getItem("key"))
 }
 
 function myFunction2() {
@@ -1302,28 +1302,28 @@ function myFunction2() {
   alert(x)
   // localStorage["key"] = x;
   localStorage.setItem("key", x) ;
-  alert(localStorage["key"])
+  alert(localStorage.getItem("key"))
 }
 function myFunction3() {
   var x = document.getElementById("myBtn3").value;
   alert(x)
   localStorage["key"]=x
   localStorage.setItem("key", x) ;
-  alert(localStorage["key"])
+  alert(localStorage.getItem("key"))
 }
 function myFunction4() {
   var x = document.getElementById("myBtn4").value;
   alert(x)
   // localStorage["key"] = x;
   localStorage.setItem("key", x) ;
-  alert(localStorage["key"])
+  alert(localStorage.getItem("key"))
 }
 function myFunction5() {
   var x = document.getElementById("myBtn5").value;
   alert(x)
   // localStorage["key"] = x;
   localStorage.setItem("key", x) ;
-  alert(localStorage["key"])
+  alert(localStorage.getItem("key"))
 }
 
 function question2(data) {
