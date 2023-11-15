@@ -798,6 +798,7 @@ function submitanswer() {
     for (let i = 1; i <= choice_length; i++) {
       var ids = document.getElementById("myBtn" + i).value;
   alert("hii i am id="+ids)
+  alert("localStorage['key']: ", localStorage["key"])
       if (localStorage["key"] == ids) {
         value = localStorage["key"];
         alert("line=803"+value);
