@@ -1268,27 +1268,32 @@ function myFunction1() {
   var x = document.getElementById("myBtn1").value;
   alert(x)
   localStorage["key"] = x;
+  alert(localStorage["key"])
 }
 
 function myFunction2() {
   var x = document.getElementById("myBtn2").value;
   alert(x)
   localStorage["key"] = x;
+  alert(localStorage["key"])
 }
 function myFunction3() {
   var x = document.getElementById("myBtn3").value;
   alert(x)
   localStorage["key"] = x;
+  alert(localStorage["key"])
 }
 function myFunction4() {
   var x = document.getElementById("myBtn4").value;
   alert(x)
   localStorage["key"] = x;
+  alert(localStorage["key"])
 }
 function myFunction5() {
   var x = document.getElementById("myBtn5").value;
   alert(x)
   localStorage["key"] = x;
+  alert(localStorage["key"])
 }
 
 function question2(data) {
