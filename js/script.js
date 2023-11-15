@@ -820,7 +820,6 @@ function submitanswer() {
   }
 
   var question_id = localStorage.getItem("id1");
-  alert("line 831="+value)
   var url =
     "https://toyota-lakshya-onlineassessment.in/api/submit_answer/?" +
     "login_id=" +
