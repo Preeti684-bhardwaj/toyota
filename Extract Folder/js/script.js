@@ -846,6 +846,7 @@ function submitanswer() {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
+      alert(value)
       var status = data.status;
       if (status === "success" && value) {
         get_next_qn();
@@ -1265,26 +1266,28 @@ function question1(data) {
 
 function myFunction1() {
   var x = document.getElementById("myBtn1").value;
+  alert(x)
   localStorage["key"] = x;
 }
 
 function myFunction2() {
   var x = document.getElementById("myBtn2").value;
+  alert(x)
   localStorage["key"] = x;
 }
 function myFunction3() {
   var x = document.getElementById("myBtn3").value;
-
+  alert(x)
   localStorage["key"] = x;
 }
 function myFunction4() {
   var x = document.getElementById("myBtn4").value;
-
+  alert(x)
   localStorage["key"] = x;
 }
 function myFunction5() {
   var x = document.getElementById("myBtn5").value;
-
+  alert(x)
   localStorage["key"] = x;
 }
 
