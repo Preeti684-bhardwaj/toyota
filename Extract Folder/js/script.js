@@ -7,8 +7,8 @@ function alertSomething(){
 function get_next_qn() {
   $("#overlay").fadeIn(300);
 
-  var lakshya_id = sessionStorage.getItem("lakshya_id");
-  var assessment_id = sessionStorage.getItem("assessment_id");
+  var lakshya_id = localStorage.getItem("lakshya_id");
+  var assessment_id = localStorage.getItem("assessment_id");
   var page5 = '<label class="QLable" id="Q1">total_questions1</label>';
   var collectionss = "";
   var page6 =
@@ -30,7 +30,7 @@ function get_next_qn() {
 
       var times = data.elapsed_time;
 
-      sessionStorage.setItem("elapsed_time", times);
+      localStorage.setItem("elapsed_time", times);
       if (!executed) {
         initCountdown(times);
         executed = true;
@@ -73,7 +73,7 @@ function get_next_qn() {
 
       $("#attended").append(collectionsss);
 
-      sessionStorage.setItem("id1", question_id);
+      localStorage.setItem("id1", question_id);
       question_type = obj.question_type;
 
       data.question;
@@ -780,8 +780,8 @@ function get_next_qn() {
 function submitanswer() {
   $("#overlay").fadeIn(300);
   console.log("hii from submit answer");
-  var lakshya_id = sessionStorage.getItem("lakshya_id");
-  var assessment_id = sessionStorage.getItem("assessment_id");
+  var lakshya_id = localStorage.getItem("lakshya_id");
+  var assessment_id = localStorage.getItem("assessment_id");
 
   var demo_time = document.getElementById("demo").innerHTML;
   var elapsed_time;
@@ -794,20 +794,20 @@ function submitanswer() {
 
   if (question_type === "single_choice" || question_type === "multiple_choice") {
     var choices = [];
-
+ alert("hii i am choices="+choices)
     for (let i = 1; i <= choice_length; i++) {
       var ids = document.getElementById("myBtn" + i).value;
-
-      if (sessionStorage["key"] === ids) {
-        value = sessionStorage["key"];
-        alert(value);
+  alert("hii i am id="+ids)
+      if (localStorage["key"] === ids) {
+        value = localStorage["key"];
+        alert("line=803"+value);
         break;
       }
       choices.push(ids);
     }
 
     if (!value) {
-      value = choices.includes(sessionStorage["key"]) ? sessionStorage["key"] : "";
+      value = choices.includes(localStorage["key"]) ? localStorage["key"] : "";
     }
   } else if (question_type === "descriptive" || question_type === "image_descriptive") {
     value = document.getElementById("descriptionn").value;
@@ -826,9 +826,9 @@ function submitanswer() {
     }
   }
 
-  var question_id = sessionStorage.getItem("id1");
+  var question_id = localStorage.getItem("id1");
   console.log(value);
-
+  alert("line 831="+value)
   var url =
     "https://toyota-lakshya-onlineassessment.in/api/submit_answer/?" +
     "login_id=" +
@@ -845,8 +845,7 @@ function submitanswer() {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
-      alert(value)
+      alert("line 848="+data);
       var status = data.status;
       if (status === "success" && value) {
         get_next_qn();
@@ -1267,28 +1266,28 @@ function question1(data) {
 function myFunction1() {
   var x = document.getElementById("myBtn1").value;
   alert(x)
-  sessionStorage["key"] = x;
+  localStorage["key"] = x;
 }
 
 function myFunction2() {
   var x = document.getElementById("myBtn2").value;
   alert(x)
-  sessionStorage["key"] = x;
+  localStorage["key"] = x;
 }
 function myFunction3() {
   var x = document.getElementById("myBtn3").value;
   alert(x)
-  sessionStorage["key"] = x;
+  localStorage["key"] = x;
 }
 function myFunction4() {
   var x = document.getElementById("myBtn4").value;
   alert(x)
-  sessionStorage["key"] = x;
+  localStorage["key"] = x;
 }
 function myFunction5() {
   var x = document.getElementById("myBtn5").value;
   alert(x)
-  sessionStorage["key"] = x;
+  localStorage["key"] = x;
 }
 
 function question2(data) {
