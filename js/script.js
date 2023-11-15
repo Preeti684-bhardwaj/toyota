@@ -1,9 +1,5 @@
 var executed = false;
 
-function alertSomething(){
-	alert("hii i am working")
-}
-
 function get_next_qn() {
   $("#overlay").fadeIn(300);
 
@@ -794,20 +790,17 @@ function submitanswer() {
 
   if (question_type === "single_choice" || question_type === "multiple_choice") {
     var choices = [];
-
     for (let i = 1; i <= choice_length; i++) {
       var ids = document.getElementById("myBtn" + i).value;
-
-      if (localStorage["key"] === ids) {
-        value = localStorage["key"];
-        alert(value);
+      if (localStorage.getItem("key")=== ids) {
+        value = localStorage.getItem("key");
         break;
       }
       choices.push(ids);
     }
 
     if (!value) {
-      value = choices.includes(localStorage["key"]) ? localStorage["key"] : "";
+      value = choices.includes(localStorage.getItem("key")) ? localStorage.getItem("key") : "";
     }
   } else if (question_type === "descriptive" || question_type === "image_descriptive") {
     value = document.getElementById("descriptionn").value;
@@ -827,8 +820,7 @@ function submitanswer() {
   }
 
   var question_id = localStorage.getItem("id1");
-  console.log(value);
-
+  alert("line 831="+value)
   var url =
     "https://toyota-lakshya-onlineassessment.in/api/submit_answer/?" +
     "login_id=" +
@@ -845,9 +837,8 @@ function submitanswer() {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       var status = data.status;
-      if (status === "success" && value) {
+      if (status === "success") {
         get_next_qn();
         console.log(status);
         $("#overlay").fadeIn(300);
@@ -1265,27 +1256,24 @@ function question1(data) {
 
 function myFunction1() {
   var x = document.getElementById("myBtn1").value;
-  localStorage["key"] = x;
+  localStorage.setItem("key", x);
 }
 
 function myFunction2() {
   var x = document.getElementById("myBtn2").value;
-  localStorage["key"] = x;
+  localStorage.setItem("key", x);
 }
 function myFunction3() {
   var x = document.getElementById("myBtn3").value;
-
-  localStorage["key"] = x;
+  localStorage.setItem("key", x);
 }
 function myFunction4() {
   var x = document.getElementById("myBtn4").value;
-
-  localStorage["key"] = x;
+  localStorage.setItem("key", x);
 }
 function myFunction5() {
   var x = document.getElementById("myBtn5").value;
-
-  localStorage["key"] = x;
+  localStorage.setItem("key", x);
 }
 
 function question2(data) {
